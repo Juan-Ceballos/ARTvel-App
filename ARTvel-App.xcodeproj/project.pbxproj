@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0CE5BAC0FE100A9263E0BD0B /* Pods_ARTvel_App_ARTvel_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
-		3EE1C2FD254A26A100947C19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FC254A26A100947C19 /* ViewController.swift */; };
 		3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C301254A26A300947C19 /* Assets.xcassets */; };
 		3EE1C305254A26A300947C19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */; };
 		3EE1C310254A26A300947C19 /* ARTvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C30F254A26A300947C19 /* ARTvel_AppTests.swift */; };
 		3EE1C31B254A26A300947C19 /* ARTvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */; };
 		3EE1C32F254A280D00947C19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */; };
+		3EE1C357254A2B8800947C19 /* FavotitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */; };
+		3EE1C35C254A2BAE00947C19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */; };
+		3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C360254A2C2200947C19 /* MainTabBarController.swift */; };
+		3EE1C366254A2C4400947C19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C365254A2C4400947C19 /* SearchViewController.swift */; };
+		3EE1C36B254A2C5F00947C19 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C36A254A2C5F00947C19 /* SettingsViewController.swift */; };
+		3EE1C370254A2C7700947C19 /* UserExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C36F254A2C7700947C19 /* UserExperienceViewController.swift */; };
+		3EE1C376254A2CC300947C19 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C375254A2CC300947C19 /* Date+Extensions.swift */; };
+		3EE1C37B254A2CE100947C19 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C37A254A2CE100947C19 /* UIViewController+Alerts.swift */; };
+		3EE1C380254A2CFD00947C19 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C37F254A2CFD00947C19 /* UIViewController+Navigation.swift */; };
+		3EE1C38B254A2E5A00947C19 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C38A254A2E5A00947C19 /* ArtObject.swift */; };
+		3EE1C390254A2E6400947C19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C38F254A2E6400947C19 /* User.swift */; };
+		3EE1C395254A2E7500947C19 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C394254A2E7500947C19 /* Event.swift */; };
+		3EE1C39A254A2E9800947C19 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C399254A2E9800947C19 /* AppError.swift */; };
+		3EE1C39F254A2EAE00947C19 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C39E254A2EAE00947C19 /* NetworkHelper.swift */; };
+		3EE1C3A4254A2ED600947C19 /* RijksAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3A3254A2ED600947C19 /* RijksAPIClient.swift */; };
+		3EE1C3A9254A2EF700947C19 /* TicketMasterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3A8254A2EF700947C19 /* TicketMasterAPIClient.swift */; };
+		3EE1C3AE254A2F1800947C19 /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3AD254A2F1800947C19 /* AuthSession.swift */; };
+		3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3B2254A2F3000947C19 /* DatabaseService.swift */; };
+		3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3B7254A2F4700947C19 /* StorageService.swift */; };
+		3EE1C3BD254A2F6900947C19 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3BC254A2F6900947C19 /* Secrets.swift */; };
 		63B902F1C5663D5740C6FA7F /* Pods_ARTvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */; };
 		805554FA42030D8CCA280FE4 /* Pods_ARTvel_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +63,6 @@
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EE1C2FC254A26A100947C19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3EE1C301254A26A300947C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EE1C304254A26A300947C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EE1C306254A26A300947C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +73,26 @@
 		3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTvel_AppUITests.swift; sourceTree = "<group>"; };
 		3EE1C31C254A26A300947C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavotitesViewController.swift; sourceTree = "<group>"; };
+		3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3EE1C360254A2C2200947C19 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3EE1C365254A2C4400947C19 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3EE1C36A254A2C5F00947C19 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3EE1C36F254A2C7700947C19 /* UserExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperienceViewController.swift; sourceTree = "<group>"; };
+		3EE1C375254A2CC300947C19 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		3EE1C37A254A2CE100947C19 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		3EE1C37F254A2CFD00947C19 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		3EE1C38A254A2E5A00947C19 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
+		3EE1C38F254A2E6400947C19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3EE1C394254A2E7500947C19 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3EE1C399254A2E9800947C19 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		3EE1C39E254A2EAE00947C19 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		3EE1C3A3254A2ED600947C19 /* RijksAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksAPIClient.swift; sourceTree = "<group>"; };
+		3EE1C3A8254A2EF700947C19 /* TicketMasterAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketMasterAPIClient.swift; sourceTree = "<group>"; };
+		3EE1C3AD254A2F1800947C19 /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
+		3EE1C3B2254A2F3000947C19 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		3EE1C3B7254A2F4700947C19 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		3EE1C3BC254A2F6900947C19 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9012EE7483F1E44FC495FB0E /* Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +139,6 @@
 				8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */,
 				01B25B1566323499A71F01F1 /* Pods-ARTvel-AppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,9 +167,16 @@
 		3EE1C2F7254A26A100947C19 /* ARTvel-App */ = {
 			isa = PBXGroup;
 			children = (
+				3EE1C389254A2E3800947C19 /* Views */,
+				3EE1C388254A2E2400947C19 /* SupportingFiles */,
+				3EE1C387254A2E1C00947C19 /* Secrets */,
+				3EE1C386254A2E0300947C19 /* NetworkServices */,
+				3EE1C385254A2DF100947C19 /* FirebaseServices */,
+				3EE1C384254A2DEA00947C19 /* Models */,
+				3EE1C374254A2C8B00947C19 /* Extensions */,
+				3EE1C352254A2B2600947C19 /* Controllers */,
 				3EE1C2F8254A26A100947C19 /* AppDelegate.swift */,
 				3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */,
-				3EE1C2FC254A26A100947C19 /* ViewController.swift */,
 				3EE1C301254A26A300947C19 /* Assets.xcassets */,
 				3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */,
 				3EE1C306254A26A300947C19 /* Info.plist */,
@@ -157,6 +201,82 @@
 				3EE1C31C254A26A300947C19 /* Info.plist */,
 			);
 			path = "ARTvel-AppUITests";
+			sourceTree = "<group>";
+		};
+		3EE1C352254A2B2600947C19 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */,
+				3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */,
+				3EE1C360254A2C2200947C19 /* MainTabBarController.swift */,
+				3EE1C365254A2C4400947C19 /* SearchViewController.swift */,
+				3EE1C36A254A2C5F00947C19 /* SettingsViewController.swift */,
+				3EE1C36F254A2C7700947C19 /* UserExperienceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3EE1C374254A2C8B00947C19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C375254A2CC300947C19 /* Date+Extensions.swift */,
+				3EE1C37A254A2CE100947C19 /* UIViewController+Alerts.swift */,
+				3EE1C37F254A2CFD00947C19 /* UIViewController+Navigation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3EE1C384254A2DEA00947C19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C38A254A2E5A00947C19 /* ArtObject.swift */,
+				3EE1C38F254A2E6400947C19 /* User.swift */,
+				3EE1C394254A2E7500947C19 /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3EE1C385254A2DF100947C19 /* FirebaseServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C3AD254A2F1800947C19 /* AuthSession.swift */,
+				3EE1C3B2254A2F3000947C19 /* DatabaseService.swift */,
+				3EE1C3B7254A2F4700947C19 /* StorageService.swift */,
+			);
+			path = FirebaseServices;
+			sourceTree = "<group>";
+		};
+		3EE1C386254A2E0300947C19 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C399254A2E9800947C19 /* AppError.swift */,
+				3EE1C39E254A2EAE00947C19 /* NetworkHelper.swift */,
+				3EE1C3A3254A2ED600947C19 /* RijksAPIClient.swift */,
+				3EE1C3A8254A2EF700947C19 /* TicketMasterAPIClient.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		3EE1C387254A2E1C00947C19 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1C3BC254A2F6900947C19 /* Secrets.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		3EE1C388254A2E2400947C19 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3EE1C389254A2E3800947C19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8EE7B88D2B6AACE281B9FF81 /* Frameworks */ = {
@@ -407,9 +527,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE1C2FD254A26A100947C19 /* ViewController.swift in Sources */,
+				3EE1C390254A2E6400947C19 /* User.swift in Sources */,
+				3EE1C366254A2C4400947C19 /* SearchViewController.swift in Sources */,
+				3EE1C39A254A2E9800947C19 /* AppError.swift in Sources */,
+				3EE1C3AE254A2F1800947C19 /* AuthSession.swift in Sources */,
+				3EE1C35C254A2BAE00947C19 /* LoginViewController.swift in Sources */,
+				3EE1C376254A2CC300947C19 /* Date+Extensions.swift in Sources */,
+				3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */,
+				3EE1C37B254A2CE100947C19 /* UIViewController+Alerts.swift in Sources */,
+				3EE1C38B254A2E5A00947C19 /* ArtObject.swift in Sources */,
+				3EE1C3A4254A2ED600947C19 /* RijksAPIClient.swift in Sources */,
+				3EE1C36B254A2C5F00947C19 /* SettingsViewController.swift in Sources */,
+				3EE1C39F254A2EAE00947C19 /* NetworkHelper.swift in Sources */,
 				3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */,
+				3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */,
+				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
+				3EE1C357254A2B8800947C19 /* FavotitesViewController.swift in Sources */,
 				3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */,
+				3EE1C370254A2C7700947C19 /* UserExperienceViewController.swift in Sources */,
+				3EE1C395254A2E7500947C19 /* Event.swift in Sources */,
+				3EE1C380254A2CFD00947C19 /* UIViewController+Navigation.swift in Sources */,
+				3EE1C3A9254A2EF700947C19 /* TicketMasterAPIClient.swift in Sources */,
+				3EE1C3BD254A2F6900947C19 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
