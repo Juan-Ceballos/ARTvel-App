@@ -1,0 +1,6 @@
+framework module Pods_ARTvel_App {
+  umbrella header "Pods-ARTvel-App-umbrella.h"
+
+  export *
+  module * { export * }
+}

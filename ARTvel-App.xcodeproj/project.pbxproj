@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CE5BAC0FE100A9263E0BD0B /* Pods_ARTvel_App_ARTvel_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
 		3EE1C2FD254A26A100947C19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FC254A26A100947C19 /* ViewController.swift */; };
@@ -14,6 +15,9 @@
 		3EE1C305254A26A300947C19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */; };
 		3EE1C310254A26A300947C19 /* ARTvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C30F254A26A300947C19 /* ARTvel_AppTests.swift */; };
 		3EE1C31B254A26A300947C19 /* ARTvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */; };
+		3EE1C32F254A280D00947C19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */; };
+		63B902F1C5663D5740C6FA7F /* Pods_ARTvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */; };
+		805554FA42030D8CCA280FE4 /* Pods_ARTvel_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B25B1566323499A71F01F1 /* Pods-ARTvel-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTvel_App_ARTvel_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0FC0C09E83996AFC6A3182 /* Pods-ARTvel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.release.xcconfig"; sourceTree = "<group>"; };
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		3EE1C316254A26A300947C19 /* ARTvel-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ARTvel-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTvel_AppUITests.swift; sourceTree = "<group>"; };
 		3EE1C31C254A26A300947C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9012EE7483F1E44FC495FB0E /* Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTvel_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3C5B0C5D6833C7D559F50C /* Pods-ARTvel-App-ARTvel-AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App-ARTvel-AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTvel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B902F1C5663D5740C6FA7F /* Pods_ARTvel_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805554FA42030D8CCA280FE4 /* Pods_ARTvel_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE5BAC0FE100A9263E0BD0B /* Pods_ARTvel_App_ARTvel_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F3A28C781CFF99ED7C8455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */,
+				2A0FC0C09E83996AFC6A3182 /* Pods-ARTvel-App.release.xcconfig */,
+				BE3C5B0C5D6833C7D559F50C /* Pods-ARTvel-App-ARTvel-AppUITests.debug.xcconfig */,
+				9012EE7483F1E44FC495FB0E /* Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig */,
+				8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */,
+				01B25B1566323499A71F01F1 /* Pods-ARTvel-AppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3EE1C2EC254A26A100947C19 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +112,8 @@
 				3EE1C30E254A26A300947C19 /* ARTvel-AppTests */,
 				3EE1C319254A26A300947C19 /* ARTvel-AppUITests */,
 				3EE1C2F6254A26A100947C19 /* Products */,
+				22F3A28C781CFF99ED7C8455 /* Pods */,
+				8EE7B88D2B6AACE281B9FF81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +136,7 @@
 				3EE1C301254A26A300947C19 /* Assets.xcassets */,
 				3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */,
 				3EE1C306254A26A300947C19 /* Info.plist */,
+				3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */,
 			);
 			path = "ARTvel-App";
 			sourceTree = "<group>";
@@ -125,6 +159,16 @@
 			path = "ARTvel-AppUITests";
 			sourceTree = "<group>";
 		};
+		8EE7B88D2B6AACE281B9FF81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */,
+				0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */,
+				BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EE1C31F254A26A300947C19 /* Build configuration list for PBXNativeTarget "ARTvel-App" */;
 			buildPhases = (
+				3A66E99F0E17CAC7BB513D08 /* [CP] Check Pods Manifest.lock */,
 				3EE1C2F1254A26A100947C19 /* Sources */,
 				3EE1C2F2254A26A100947C19 /* Frameworks */,
 				3EE1C2F3254A26A100947C19 /* Resources */,
+				54610C22A180F48796018CD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EE1C322254A26A300947C19 /* Build configuration list for PBXNativeTarget "ARTvel-AppTests" */;
 			buildPhases = (
+				DC3353DD906F7B79F13B744C /* [CP] Check Pods Manifest.lock */,
 				3EE1C307254A26A300947C19 /* Sources */,
 				3EE1C308254A26A300947C19 /* Frameworks */,
 				3EE1C309254A26A300947C19 /* Resources */,
@@ -167,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EE1C325254A26A300947C19 /* Build configuration list for PBXNativeTarget "ARTvel-AppUITests" */;
 			buildPhases = (
+				715CB49D8FE96923B9A22FDF /* [CP] Check Pods Manifest.lock */,
 				3EE1C312254A26A300947C19 /* Sources */,
 				3EE1C313254A26A300947C19 /* Frameworks */,
 				3EE1C314254A26A300947C19 /* Resources */,
+				BF51F08844393E1F4EFEEF9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +279,7 @@
 			files = (
 				3EE1C305254A26A300947C19 /* LaunchScreen.storyboard in Resources */,
 				3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */,
+				3EE1C32F254A280D00947C19 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A66E99F0E17CAC7BB513D08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARTvel-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54610C22A180F48796018CD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		715CB49D8FE96923B9A22FDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARTvel-App-ARTvel-AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF51F08844393E1F4EFEEF9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC3353DD906F7B79F13B744C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARTvel-AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EE1C2F1254A26A100947C19 /* Sources */ = {
@@ -421,6 +574,7 @@
 		};
 		3EE1C320254A26A300947C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +594,7 @@
 		};
 		3EE1C321254A26A300947C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A0FC0C09E83996AFC6A3182 /* Pods-ARTvel-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +614,7 @@
 		};
 		3EE1C323254A26A300947C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,6 +637,7 @@
 		};
 		3EE1C324254A26A300947C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B25B1566323499A71F01F1 /* Pods-ARTvel-AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +660,7 @@
 		};
 		3EE1C326254A26A300947C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE3C5B0C5D6833C7D559F50C /* Pods-ARTvel-App-ARTvel-AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +681,7 @@
 		};
 		3EE1C327254A26A300947C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9012EE7483F1E44FC495FB0E /* Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

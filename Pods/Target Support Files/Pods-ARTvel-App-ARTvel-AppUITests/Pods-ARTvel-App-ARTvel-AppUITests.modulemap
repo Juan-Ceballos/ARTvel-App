@@ -1,0 +1,6 @@
+framework module Pods_ARTvel_App_ARTvel_AppUITests {
+  umbrella header "Pods-ARTvel-App-ARTvel-AppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
