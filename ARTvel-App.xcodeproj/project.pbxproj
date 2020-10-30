@@ -35,6 +35,14 @@
 		3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3B2254A2F3000947C19 /* DatabaseService.swift */; };
 		3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3B7254A2F4700947C19 /* StorageService.swift */; };
 		3EE1C3BD254A2F6900947C19 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3BC254A2F6900947C19 /* Secrets.swift */; };
+		3EE1C3C2254B29DB00947C19 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3C1254B29DB00947C19 /* FavoritesView.swift */; };
+		3EE1C3C7254B29E700947C19 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3C6254B29E700947C19 /* LoginView.swift */; };
+		3EE1C3CC254B29F600947C19 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */; };
+		3EE1C3D1254B2A0200947C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3D0254B2A0200947C19 /* SettingsView.swift */; };
+		3EE1C3D6254B2A1600947C19 /* TicketMasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */; };
+		3EE1C3DB254B2A2A00947C19 /* UserExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */; };
+		3EE1C3E0254B2A3E00947C19 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3DF254B2A3E00947C19 /* SearchView.swift */; };
+		3EE1C3E5254B2A5B00947C19 /* RijksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */; };
 		63B902F1C5663D5740C6FA7F /* Pods_ARTvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */; };
 		805554FA42030D8CCA280FE4 /* Pods_ARTvel_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +101,14 @@
 		3EE1C3B2254A2F3000947C19 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		3EE1C3B7254A2F4700947C19 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		3EE1C3BC254A2F6900947C19 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		3EE1C3C1254B29DB00947C19 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		3EE1C3C6254B29E700947C19 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		3EE1C3D0254B2A0200947C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketMasterCell.swift; sourceTree = "<group>"; };
+		3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperienceView.swift; sourceTree = "<group>"; };
+		3EE1C3DF254B2A3E00947C19 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCell.swift; sourceTree = "<group>"; };
 		8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9012EE7483F1E44FC495FB0E /* Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-App-ARTvel-AppUITests/Pods-ARTvel-App-ARTvel-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,10 +191,6 @@
 				3EE1C384254A2DEA00947C19 /* Models */,
 				3EE1C374254A2C8B00947C19 /* Extensions */,
 				3EE1C352254A2B2600947C19 /* Controllers */,
-				3EE1C2F8254A26A100947C19 /* AppDelegate.swift */,
-				3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */,
-				3EE1C301254A26A300947C19 /* Assets.xcassets */,
-				3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */,
 				3EE1C306254A26A300947C19 /* Info.plist */,
 				3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */,
 			);
@@ -268,6 +280,10 @@
 		3EE1C388254A2E2400947C19 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				3EE1C2F8254A26A100947C19 /* AppDelegate.swift */,
+				3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */,
+				3EE1C301254A26A300947C19 /* Assets.xcassets */,
+				3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -275,6 +291,14 @@
 		3EE1C389254A2E3800947C19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3EE1C3C1254B29DB00947C19 /* FavoritesView.swift */,
+				3EE1C3C6254B29E700947C19 /* LoginView.swift */,
+				3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */,
+				3EE1C3D0254B2A0200947C19 /* SettingsView.swift */,
+				3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */,
+				3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */,
+				3EE1C3DF254B2A3E00947C19 /* SearchView.swift */,
+				3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,18 +552,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EE1C390254A2E6400947C19 /* User.swift in Sources */,
+				3EE1C3DB254B2A2A00947C19 /* UserExperienceView.swift in Sources */,
 				3EE1C366254A2C4400947C19 /* SearchViewController.swift in Sources */,
+				3EE1C3E0254B2A3E00947C19 /* SearchView.swift in Sources */,
 				3EE1C39A254A2E9800947C19 /* AppError.swift in Sources */,
 				3EE1C3AE254A2F1800947C19 /* AuthSession.swift in Sources */,
 				3EE1C35C254A2BAE00947C19 /* LoginViewController.swift in Sources */,
+				3EE1C3E5254B2A5B00947C19 /* RijksCell.swift in Sources */,
 				3EE1C376254A2CC300947C19 /* Date+Extensions.swift in Sources */,
+				3EE1C3C7254B29E700947C19 /* LoginView.swift in Sources */,
+				3EE1C3D6254B2A1600947C19 /* TicketMasterCell.swift in Sources */,
 				3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */,
 				3EE1C37B254A2CE100947C19 /* UIViewController+Alerts.swift in Sources */,
 				3EE1C38B254A2E5A00947C19 /* ArtObject.swift in Sources */,
 				3EE1C3A4254A2ED600947C19 /* RijksAPIClient.swift in Sources */,
 				3EE1C36B254A2C5F00947C19 /* SettingsViewController.swift in Sources */,
+				3EE1C3C2254B29DB00947C19 /* FavoritesView.swift in Sources */,
 				3EE1C39F254A2EAE00947C19 /* NetworkHelper.swift in Sources */,
 				3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */,
+				3EE1C3CC254B29F600947C19 /* MainTabBarView.swift in Sources */,
 				3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */,
 				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
 				3EE1C357254A2B8800947C19 /* FavotitesViewController.swift in Sources */,
@@ -549,6 +580,7 @@
 				3EE1C380254A2CFD00947C19 /* UIViewController+Navigation.swift in Sources */,
 				3EE1C3A9254A2EF700947C19 /* TicketMasterAPIClient.swift in Sources */,
 				3EE1C3BD254A2F6900947C19 /* Secrets.swift in Sources */,
+				3EE1C3D1254B2A0200947C19 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
