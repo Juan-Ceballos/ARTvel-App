@@ -15,7 +15,7 @@
 		3EE1C310254A26A300947C19 /* ARTvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C30F254A26A300947C19 /* ARTvel_AppTests.swift */; };
 		3EE1C31B254A26A300947C19 /* ARTvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */; };
 		3EE1C32F254A280D00947C19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */; };
-		3EE1C357254A2B8800947C19 /* FavotitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */; };
+		3EE1C357254A2B8800947C19 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C356254A2B8800947C19 /* FavoritesViewController.swift */; };
 		3EE1C35C254A2BAE00947C19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */; };
 		3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C360254A2C2200947C19 /* MainTabBarController.swift */; };
 		3EE1C366254A2C4400947C19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C365254A2C4400947C19 /* SearchViewController.swift */; };
@@ -81,7 +81,7 @@
 		3EE1C31A254A26A300947C19 /* ARTvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTvel_AppUITests.swift; sourceTree = "<group>"; };
 		3EE1C31C254A26A300947C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE1C32E254A280D00947C19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavotitesViewController.swift; sourceTree = "<group>"; };
+		3EE1C356254A2B8800947C19 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EE1C360254A2C2200947C19 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3EE1C365254A2C4400947C19 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		3EE1C352254A2B2600947C19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EE1C356254A2B8800947C19 /* FavotitesViewController.swift */,
+				3EE1C356254A2B8800947C19 /* FavoritesViewController.swift */,
 				3EE1C35B254A2BAE00947C19 /* LoginViewController.swift */,
 				3EE1C360254A2C2200947C19 /* MainTabBarController.swift */,
 				3EE1C365254A2C4400947C19 /* SearchViewController.swift */,
@@ -573,7 +573,7 @@
 				3EE1C3CC254B29F600947C19 /* MainTabBarView.swift in Sources */,
 				3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */,
 				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
-				3EE1C357254A2B8800947C19 /* FavotitesViewController.swift in Sources */,
+				3EE1C357254A2B8800947C19 /* FavoritesViewController.swift in Sources */,
 				3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */,
 				3EE1C370254A2C7700947C19 /* UserExperienceViewController.swift in Sources */,
 				3EE1C395254A2E7500947C19 /* Event.swift in Sources */,
