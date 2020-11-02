@@ -44,7 +44,7 @@ class SearchViewController: UIViewController {
         configureCollectionView()
         configureDataSource()
         // forced default art objects
-        fetchSampleArtItems(searchQuery: "Rembrandt+van+Rijn")
+        fetchSampleArtItems(searchQuery: searchQuery)
         
     }
     
@@ -79,7 +79,9 @@ class SearchViewController: UIViewController {
     // rijk only
     private func updateSnapshot(artItems: [ArtObject])   {
         var snapshot = dataSource.snapshot()
-        snapshot.appendItems(artItems, toSection: .main)
+        snapshot.deleteAllItems()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(artItems)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
