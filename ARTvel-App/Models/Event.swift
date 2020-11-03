@@ -19,6 +19,6 @@ struct EventQuery: Decodable {
     let events: [Event]
 }
 
-struct Event: Decodable    {
+struct Event: Decodable, Hashable {
     let name: String
 }

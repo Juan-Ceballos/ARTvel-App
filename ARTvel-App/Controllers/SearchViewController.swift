@@ -11,25 +11,50 @@ import Kingfisher
 
 class SearchViewController: UIViewController {
 
-    private enum Section {
-        case main
+    var state: AppState
+    
+    init(state: AppState) {
+        self.state = state
+        super.init(nibName: nil, bundle: nil)
     }
     
-    private enum appState {
-        case rijks
-        case ticketmaster
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private enum Section {
+        case main
     }
     
     let authSession = AuthSession()
     let searchView = SearchView()
     private var searchController: UISearchController!
     
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, ArtObject>
-    private var dataSource: DataSource!
+    private typealias DataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>
+    private typealias DataSourceTM = UICollectionViewDiffableDataSource<Section, Event>
+
+    private var dataSourceRijks: DataSourceRijks!
+    private var dataSourceTM: DataSourceTM!
     
     var searchQuery: String = "" {
         didSet {
+            switch state.state {
+            case .rijks:
+                fetchSampleArtItems(searchQuery: searchQuery)
+            case .ticketMaster:
+                fetchEventItems(searchQuery: searchQuery)
+            }
+        }
+    }
+    
+    func configure() {
+        switch state.state {
+        case .rijks:
+            configureDataSourceRijks()
             fetchSampleArtItems(searchQuery: searchQuery)
+        case .ticketMaster:
+            configureDataSourceTM()
+            fetchEventItems(searchQuery: searchQuery)
         }
     }
     
@@ -42,15 +67,16 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureSearchController()
         configureCollectionView()
-        configureDataSource()
-        // forced default art objects
-        fetchSampleArtItems(searchQuery: searchQuery)
-        
-    }
+        configure()
+}
     
-
     private func configureCollectionView()  {
-        searchView.collectionView.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
+        switch state.state {
+        case .rijks:
+            searchView.collectionView.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
+        case .ticketMaster:
+            searchView.collectionView.register(TicketMasterCell.self, forCellWithReuseIdentifier: TicketMasterCell.reuseIdentifier)
+        }
     }
     
     private func configureSearchController()    {
@@ -61,8 +87,7 @@ class SearchViewController: UIViewController {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
     }
-    // "Rembrandt+van+Rijn"
-    // hardcoded search entry for rijk
+    
     private func fetchSampleArtItems(searchQuery: String)  {
         RijksAPIClient.fetchArtObjects(searchQuery: searchQuery) { [weak self] (result) in
             switch result {
@@ -70,23 +95,43 @@ class SearchViewController: UIViewController {
                 print(error)
             case .success(let artObjects):
                 DispatchQueue.main.async {
-                    self?.updateSnapshot(artItems: artObjects)
+                    self?.updateRijksSnapshot(artItems: artObjects)
                 }
             }
         }
     }
     
-    // rijk only
-    private func updateSnapshot(artItems: [ArtObject])   {
-        var snapshot = dataSource.snapshot()
+    private func fetchEventItems(searchQuery: String) {
+        TicketMasterAPIClient.fetchEvents(stateCode: searchQuery, city: searchQuery, postalCode: searchQuery) { [weak self](result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let eventObjects):
+                DispatchQueue.main.async {
+                    self?.updateTMSnapshot(eventItems: eventObjects)
+                }
+            }
+        }
+    }
+    
+    private func updateRijksSnapshot(artItems: [ArtObject])   {
+        var snapshot = dataSourceRijks.snapshot()
         snapshot.deleteAllItems()
         snapshot.appendSections([.main])
         snapshot.appendItems(artItems)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        dataSourceRijks.apply(snapshot, animatingDifferences: false)
     }
     
-    private func configureDataSource()  {
-        dataSource = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchView.collectionView, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
+    private func updateTMSnapshot(eventItems: [Event]) {
+        var snapshot = dataSourceTM.snapshot()
+        snapshot.deleteAllItems()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(eventItems)
+        dataSourceTM.apply(snapshot, animatingDifferences: false)
+    }
+    
+    private func configureDataSourceRijks()  {
+        dataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchView.collectionView, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RijksCell.reuseIdentifier, for: indexPath) as? RijksCell else {
                 fatalError()
@@ -99,13 +144,36 @@ class SearchViewController: UIViewController {
             return cell
         })
         
-        var snapshot = dataSource.snapshot()
+        var snapshot = dataSourceRijks.snapshot()
         snapshot.appendSections([.main])
-        dataSource.apply(snapshot, animatingDifferences: false)
+        dataSourceRijks.apply(snapshot, animatingDifferences: false)
+    }
+    
+    private func configureDataSourceTM() {
+        dataSourceTM = UICollectionViewDiffableDataSource<Section, Event>(collectionView: searchView.collectionView, cellProvider: { (collectionView, indexPath, event) -> UICollectionViewCell? in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketMasterCell.reuseIdentifier, for: indexPath) as? TicketMasterCell else {
+                fatalError()
+            }
+            
+            cell.backgroundColor = .systemRed
+            cell.eventNameLabel.text = event.name
+            cell.imageView.image = UIImage(systemName: "book")
+            //let url = URL(string: event.webImage.url)
+            //cell.imageView.kf.setImage(with: url)
+            return cell
+        })
+        
+        var snapshot = dataSourceTM.snapshot()
+        snapshot.appendSections([.main])
+        dataSourceTM.apply(snapshot, animatingDifferences: false)
     }
     
     // state of the app
-    
+    /*
+     user selects rijks or ticketmaster
+     if user selects ticketmaster use ticketmaster api populate api, search based on experience
+     */
 
 }
 

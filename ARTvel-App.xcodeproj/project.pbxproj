@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0CE5BAC0FE100A9263E0BD0B /* Pods_ARTvel_App_ARTvel_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */; };
+		3E3A91872550A2F400C4CFF4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91862550A2F400C4CFF4 /* AppState.swift */; };
+		3E3A91972551FD8800C4CFF4 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91962551FD8800C4CFF4 /* DataSource.swift */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
 		3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C301254A26A300947C19 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		01B25B1566323499A71F01F1 /* Pods-ARTvel-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		0A942F9564975CCF65CAA6A6 /* Pods_ARTvel_App_ARTvel_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTvel_App_ARTvel_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0FC0C09E83996AFC6A3182 /* Pods-ARTvel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.release.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.release.xcconfig"; sourceTree = "<group>"; };
+		3E3A91862550A2F400C4CFF4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		3E3A91962551FD8800C4CFF4 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,8 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				3EE1C38A254A2E5A00947C19 /* ArtObject.swift */,
-				3EE1C38F254A2E6400947C19 /* User.swift */,
 				3EE1C394254A2E7500947C19 /* Event.swift */,
+				3EE1C38F254A2E6400947C19 /* User.swift */,
+				3E3A91862550A2F400C4CFF4 /* AppState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */,
 				3EE1C301254A26A300947C19 /* Assets.xcassets */,
 				3EE1C303254A26A300947C19 /* LaunchScreen.storyboard */,
+				3E3A91962551FD8800C4CFF4 /* DataSource.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				3EE1C3D6254B2A1600947C19 /* TicketMasterCell.swift in Sources */,
 				3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */,
 				3EE1C37B254A2CE100947C19 /* UIViewController+Alerts.swift in Sources */,
+				3E3A91872550A2F400C4CFF4 /* AppState.swift in Sources */,
 				3EE1C38B254A2E5A00947C19 /* ArtObject.swift in Sources */,
 				3EE1C3A4254A2ED600947C19 /* RijksAPIClient.swift in Sources */,
 				3EE1C36B254A2C5F00947C19 /* SettingsViewController.swift in Sources */,
@@ -572,6 +579,7 @@
 				3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */,
 				3EE1C3CC254B29F600947C19 /* MainTabBarView.swift in Sources */,
 				3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */,
+				3E3A91972551FD8800C4CFF4 /* DataSource.swift in Sources */,
 				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
 				3EE1C357254A2B8800947C19 /* FavoritesViewController.swift in Sources */,
 				3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */,
