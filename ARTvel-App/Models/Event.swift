@@ -21,4 +21,5 @@ struct EventQuery: Decodable {
 
 struct Event: Decodable, Hashable {
     let name: String
+    let id: String
 }

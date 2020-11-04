@@ -11,9 +11,9 @@ import Kingfisher
 
 class SearchViewController: UIViewController {
 
-    var state: AppState
+    var state: AppState.State
     
-    init(state: AppState) {
+    init(state: AppState.State) {
         self.state = state
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,7 +38,7 @@ class SearchViewController: UIViewController {
     
     var searchQuery: String = "" {
         didSet {
-            switch state.state {
+            switch state {
             case .rijks:
                 fetchSampleArtItems(searchQuery: searchQuery)
             case .ticketMaster:
@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
     }
     
     func configure() {
-        switch state.state {
+        switch state {
         case .rijks:
             configureDataSourceRijks()
             fetchSampleArtItems(searchQuery: searchQuery)
@@ -71,7 +71,7 @@ class SearchViewController: UIViewController {
 }
     
     private func configureCollectionView()  {
-        switch state.state {
+        switch state {
         case .rijks:
             searchView.collectionView.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
         case .ticketMaster:
@@ -102,7 +102,7 @@ class SearchViewController: UIViewController {
     }
     
     private func fetchEventItems(searchQuery: String) {
-        TicketMasterAPIClient.fetchEvents(stateCode: searchQuery, city: searchQuery, postalCode: searchQuery) { [weak self](result) in
+        TicketMasterAPIClient.fetchEvents(stateCode: searchQuery, city: "", postalCode: "") { [weak self](result) in
             switch result {
             case .failure(let error):
                 print(error)

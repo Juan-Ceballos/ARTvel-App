@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     let authSession = AuthSession()
     let db = DatabaseService()
-    let mainTabVC = MainTabBarController()
+    //let mainTabVC = MainTabBarController(experience: <#T##String#>)
     let userExperienceVC = UserExperienceViewController()
     
     let loginView = LoginView()
@@ -43,8 +43,8 @@ class LoginViewController: UIViewController {
                         print(error)
                     case .success(let experience):
                         DispatchQueue.main.async {
-                            if let _ = experience {
-                                self?.navigateToMainView()
+                            if let experienceDB = experience {
+                                self?.navigateToMainView(experience: experienceDB)
                             } else {
                                 self?.navigateToUserExperience()
                             }
@@ -81,8 +81,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func navigateToMainView()   {
-        UIViewController.showVC(viewcontroller: mainTabVC)
+    private func navigateToMainView(experience: String)   {
+        UIViewController.showVC(viewcontroller: MainTabBarController(experience: experience))
     }
     
     private func navigateToUserExperience() {

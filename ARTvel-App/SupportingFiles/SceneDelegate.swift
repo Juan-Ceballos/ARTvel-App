@@ -32,8 +32,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     print(error)
                 case .success(let experience):
                     DispatchQueue.main.async {
-                        if let _ = experience {
-                            UIViewController.showVC(viewcontroller: MainTabBarController())
+                        if let experienceDB = experience {
+                            UIViewController.showVC(viewcontroller: MainTabBarController(experience: experienceDB))
                         } else {
                             UIViewController.showVC(viewcontroller: LoginViewController())
                         }

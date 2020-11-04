@@ -10,10 +10,29 @@ import FirebaseAuth
 
 class MainTabBarController: UITabBarController {
     
+    var experience: String
+    
+    init(experience: String) {
+        self.experience = experience
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public lazy var searchVC: UIViewController = {
-        let vc = SearchViewController()
-        vc.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
-        return vc
+        switch experience {
+        case "Rijksmuseum":
+            let vc = SearchViewController(state: AppState.State.rijks)
+            vc.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+            return vc
+
+        default:
+            let vc = SearchViewController(state: AppState.State.ticketMaster)
+            vc.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+            return vc
+        }
     }()
 
     public lazy var favoritesVC: UIViewController = {
