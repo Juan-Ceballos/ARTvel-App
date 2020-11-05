@@ -11,6 +11,10 @@ import SnapKit
 class RijksCell: UICollectionViewCell {
     static let reuseIdentifier = "rijksCell"
     
+    override func layoutSubviews() {
+        
+    }
+    
     public lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "photo")
@@ -24,6 +28,12 @@ class RijksCell: UICollectionViewCell {
         label.text = "Title"
         label.numberOfLines = 2
         return label
+    }()
+    
+    public lazy var favoriteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        return button
     }()
     
     override init(frame: CGRect) {

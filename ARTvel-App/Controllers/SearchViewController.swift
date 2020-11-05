@@ -137,7 +137,7 @@ class SearchViewController: UIViewController {
                 fatalError()
             }
             
-            cell.backgroundColor = .systemRed
+            cell.backgroundColor = .systemOrange
             cell.titleLabel.text = artItem.title
             let url = URL(string: artItem.webImage.url)
             cell.imageView.kf.setImage(with: url)

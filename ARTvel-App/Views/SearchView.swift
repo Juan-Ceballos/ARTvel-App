@@ -10,10 +10,27 @@ import SnapKit
 
 class SearchView: UIView {
     
+    enum Section: Int, CaseIterable {
+        case sectionOne
+        case sectionTwo
+        case sectionThree
+        var rowCount: Int {
+            switch self {
+            case .sectionOne:
+                return 1
+            case .sectionTwo:
+                return 2
+            case .sectionThree:
+                return 3
+            }
+            
+        }
+    }
+    
     public lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .systemYellow
+        cv.backgroundColor = .systemIndigo
         return cv
     }()
     
