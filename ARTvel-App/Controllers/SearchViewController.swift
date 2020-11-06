@@ -203,6 +203,13 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.navigationController?.pushViewController(DetailViewController(), animated: false)
+        guard let artItem = dataSourceRijks.itemIdentifier(for: indexPath) else {
+            fatalError()
+        }
+        
+        let detailView = DetailViewController()
+        detailView.currentArtItem = artItem
+        
+        self.navigationController?.pushViewController(detailView, animated: false)
     }
 }
