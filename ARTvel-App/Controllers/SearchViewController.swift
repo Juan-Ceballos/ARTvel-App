@@ -68,6 +68,7 @@ class SearchViewController: UIViewController {
         configureSearchController()
         configureCollectionView()
         configure()
+        searchView.collectionView.delegate = self
 }
     
     private func configureCollectionView()  {
@@ -137,10 +138,17 @@ class SearchViewController: UIViewController {
                 fatalError()
             }
             
-            cell.backgroundColor = .systemOrange
             cell.titleLabel.text = artItem.title
             let url = URL(string: artItem.webImage.url)
-            cell.imageView.kf.setImage(with: url)
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2))], completionHandler:  { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let kfImage):
+                    print("done \(kfImage.source.url?.absoluteString ?? "")")
+                }
+            })
             return cell
         })
         
@@ -189,5 +197,12 @@ extension SearchViewController: UISearchBarDelegate {
         print("\(searchBar.text ?? "error") + delegate")
         searchQuery = searchBar.text ?? ""
         resignFirstResponder()
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.navigationController?.pushViewController(DetailViewController(), animated: false)
     }
 }
