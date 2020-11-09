@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     var currentArtItem: ArtObject?
     
-    let detailView = DetailView()
+    let detailView = DetailRijksView()
     
     override func loadView() {
         view = detailView
@@ -31,8 +31,19 @@ class DetailViewController: UIViewController {
         
         //displayImage goes here
         let url = URL(string: displayItem.webImage.url)
-        detailView.displayImage.kf.setImage(with: url)
+        detailView.displayImageView.kf.setImage(with: url)
+        detailView.titleLabel.text = displayItem.title
         
+        // fetch detail of art object to populate detail view ui, setup elements and constraints in detailview, and fetch and populate here calling said elements
+        
+        RijksAPIClient.fetchDetailsOfArtObject(objectNumber: displayItem.objectNumber) { (result) in
+            switch result {
+            case .failure(let error):
+                break
+            case .success(let objectDetail):
+                break
+            }
+        }
     }
 
 }
