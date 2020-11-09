@@ -36,12 +36,14 @@ class DetailViewController: UIViewController {
         
         // fetch detail of art object to populate detail view ui, setup elements and constraints in detailview, and fetch and populate here calling said elements
         
-        RijksAPIClient.fetchDetailsOfArtObject(objectNumber: displayItem.objectNumber) { (result) in
+        RijksAPIClient.fetchDetailsOfArtObject(objectNumber: displayItem.objectNumber) { [weak self] (result) in
             switch result {
             case .failure(let error):
-                break
+                print(error)
             case .success(let objectDetail):
-                break
+                DispatchQueue.main.async {
+                    self?.detailView.descriptionTextView.text = objectDetail.plaqueDescriptionEnglish
+                }
             }
         }
     }

@@ -22,6 +22,14 @@ class DetailRijksView: UIView {
         return label
     }()
     
+    public lazy var descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.allowsEditingTextAttributes = false
+        textView.isEditable = false
+        textView.isSelectable = false
+        return textView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -35,6 +43,7 @@ class DetailRijksView: UIView {
     private func commonInit()   {
         setupDisplayImageConstraints()
         setupTitleLabelConstraints()
+        setupDescriptionTextViewConstraints()
     }
     
     private func setupDisplayImageConstraints() {
@@ -54,6 +63,16 @@ class DetailRijksView: UIView {
             make.top.equalTo(displayImageView.snp.bottom).offset(11)
             make.left.equalToSuperview().offset(8)
             make.right.equalTo(self.snp.centerX)
+        }
+    }
+    
+    private func setupDescriptionTextViewConstraints() {
+        addSubview(descriptionTextView)
+        descriptionTextView.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(11)
+            make.height.equalTo(self.snp.height).multipliedBy(0.2)
+            make.left.equalToSuperview().offset(11)
+            make.right.equalToSuperview().offset(-11)
         }
     }
     

@@ -22,4 +22,23 @@ struct EventQuery: Decodable {
 struct Event: Decodable, Hashable {
     let name: String
     let id: String
+    let images: [ImageWrapper]
+    let dates: StartDateWrapper
+    let url: String
+    let priceRanges: [PriceWrapper]
+}
+
+struct ImageWrapper: Decodable, Hashable {
+    let url: String
+}
+
+struct StartDateWrapper: Decodable, Hashable {
+    let localDate: String
+    let localTime: String
+}
+
+struct PriceWrapper: Decodable, Hashable {
+    let currency: String
+    let min: Double
+    let max: Double
 }

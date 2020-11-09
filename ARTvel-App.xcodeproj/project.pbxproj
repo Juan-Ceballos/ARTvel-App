@@ -12,6 +12,7 @@
 		3E3A91972551FD8800C4CFF4 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91962551FD8800C4CFF4 /* DataSource.swift */; };
 		3E3A91B92554B74400C4CFF4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91B82554B74300C4CFF4 /* DetailViewController.swift */; };
 		3E3A91BE2554B75E00C4CFF4 /* DetailRijksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */; };
+		3E3A92062559748D00C4CFF4 /* DetailTicketMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
 		3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C301254A26A300947C19 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		3E3A91962551FD8800C4CFF4 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		3E3A91B82554B74300C4CFF4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRijksView.swift; sourceTree = "<group>"; };
+		3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketMasterView.swift; sourceTree = "<group>"; };
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,11 +308,12 @@
 				3EE1C3C6254B29E700947C19 /* LoginView.swift */,
 				3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */,
 				3EE1C3D0254B2A0200947C19 /* SettingsView.swift */,
-				3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */,
 				3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */,
 				3EE1C3DF254B2A3E00947C19 /* SearchView.swift */,
 				3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */,
 				3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */,
+				3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */,
+				3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				3E3A91872550A2F400C4CFF4 /* AppState.swift in Sources */,
 				3EE1C38B254A2E5A00947C19 /* ArtObject.swift in Sources */,
 				3EE1C3A4254A2ED600947C19 /* RijksAPIClient.swift in Sources */,
+				3E3A92062559748D00C4CFF4 /* DetailTicketMasterView.swift in Sources */,
 				3EE1C36B254A2C5F00947C19 /* SettingsViewController.swift in Sources */,
 				3EE1C3C2254B29DB00947C19 /* FavoritesView.swift in Sources */,
 				3E3A91BE2554B75E00C4CFF4 /* DetailRijksView.swift in Sources */,
