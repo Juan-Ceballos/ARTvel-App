@@ -8,9 +8,9 @@
 import Foundation
 import SnapKit
 
-class SearchView: UIView {
+class SearchViewRijks: UIView {
     
-    public lazy var collectionView: UICollectionView = {
+    public lazy var collectionViewRijks: UICollectionView = {
         let layout = createLayout()
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
@@ -51,8 +51,8 @@ class SearchView: UIView {
     }
     
     private func setupCollectionViewConstraints()   {
-        addSubview(collectionView)
-        collectionView.snp.makeConstraints { (make) in
+        addSubview(collectionViewRijks)
+        collectionViewRijks.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             make.left.equalToSuperview()

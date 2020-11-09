@@ -27,7 +27,8 @@ class SearchViewController: UIViewController {
     }
     
     let authSession = AuthSession()
-    let searchView = SearchView()
+    let searchView = SearchViewRijks()
+    let searchViewTM = SearchViewTM()
     private var searchController: UISearchController!
     
     private typealias DataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>
@@ -59,7 +60,12 @@ class SearchViewController: UIViewController {
     }
     
     override func loadView() {
-        view = searchView
+        switch state {
+        case .rijks:
+            view = searchView
+        default:
+            view = searchViewTM
+        }
     }
     
     override func viewDidLoad() {
@@ -68,15 +74,15 @@ class SearchViewController: UIViewController {
         configureSearchController()
         configureCollectionView()
         configure()
-        searchView.collectionView.delegate = self
-}
+        searchView.collectionViewRijks.delegate = self
+    }
     
     private func configureCollectionView()  {
         switch state {
         case .rijks:
-            searchView.collectionView.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
+            searchView.collectionViewRijks.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
         case .ticketMaster:
-            searchView.collectionView.register(TicketMasterCell.self, forCellWithReuseIdentifier: TicketMasterCell.reuseIdentifier)
+            searchViewTM.collectionViewTM.register(TicketMasterCell.self, forCellWithReuseIdentifier: TicketMasterCell.reuseIdentifier)
         }
     }
     
@@ -132,7 +138,7 @@ class SearchViewController: UIViewController {
     }
     
     private func configureDataSourceRijks()  {
-        dataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchView.collectionView, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
+        dataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchView.collectionViewRijks, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RijksCell.reuseIdentifier, for: indexPath) as? RijksCell else {
                 fatalError()
@@ -158,14 +164,14 @@ class SearchViewController: UIViewController {
     }
     
     private func configureDataSourceTM() {
-        dataSourceTM = UICollectionViewDiffableDataSource<Section, Event>(collectionView: searchView.collectionView, cellProvider: { (collectionView, indexPath, event) -> UICollectionViewCell? in
+        dataSourceTM = UICollectionViewDiffableDataSource<Section, Event>(collectionView: searchViewTM.collectionViewTM, cellProvider: { (collectionView, indexPath, event) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketMasterCell.reuseIdentifier, for: indexPath) as? TicketMasterCell else {
                 fatalError()
             }
             
             cell.backgroundColor = .systemRed
-            //cell.eventNameLabel.text = event.name
+            cell.eventNameLabel.text = event.name
             cell.imageView.image = UIImage(systemName: "book")
             //let url = URL(string: event.webImage.url)
             //cell.imageView.kf.setImage(with: url)

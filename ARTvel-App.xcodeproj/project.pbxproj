@@ -13,6 +13,7 @@
 		3E3A91B92554B74400C4CFF4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91B82554B74300C4CFF4 /* DetailViewController.swift */; };
 		3E3A91BE2554B75E00C4CFF4 /* DetailRijksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */; };
 		3E3A92062559748D00C4CFF4 /* DetailTicketMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */; };
+		3E3A920E255A01D200C4CFF4 /* SearchViewTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
 		3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C301254A26A300947C19 /* Assets.xcassets */; };
@@ -46,7 +47,7 @@
 		3EE1C3D1254B2A0200947C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3D0254B2A0200947C19 /* SettingsView.swift */; };
 		3EE1C3D6254B2A1600947C19 /* TicketMasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */; };
 		3EE1C3DB254B2A2A00947C19 /* UserExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */; };
-		3EE1C3E0254B2A3E00947C19 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3DF254B2A3E00947C19 /* SearchView.swift */; };
+		3EE1C3E0254B2A3E00947C19 /* SearchViewRijks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3DF254B2A3E00947C19 /* SearchViewRijks.swift */; };
 		3EE1C3E5254B2A5B00947C19 /* RijksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */; };
 		63B902F1C5663D5740C6FA7F /* Pods_ARTvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E41D1EEBA5F1990E51A355 /* Pods_ARTvel_App.framework */; };
 		805554FA42030D8CCA280FE4 /* Pods_ARTvel_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5DE43B4F5F732068AB65AD /* Pods_ARTvel_AppTests.framework */; };
@@ -78,6 +79,7 @@
 		3E3A91B82554B74300C4CFF4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRijksView.swift; sourceTree = "<group>"; };
 		3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketMasterView.swift; sourceTree = "<group>"; };
+		3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewTM.swift; sourceTree = "<group>"; };
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 		3EE1C3D0254B2A0200947C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketMasterCell.swift; sourceTree = "<group>"; };
 		3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperienceView.swift; sourceTree = "<group>"; };
-		3EE1C3DF254B2A3E00947C19 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3EE1C3DF254B2A3E00947C19 /* SearchViewRijks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewRijks.swift; sourceTree = "<group>"; };
 		3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksCell.swift; sourceTree = "<group>"; };
 		8746309405EA317F4A017523 /* Pods-ARTvel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-App.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-App/Pods-ARTvel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		8C53B4F6BBB9590EB4646F34 /* Pods-ARTvel-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTvel-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-ARTvel-AppTests/Pods-ARTvel-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,11 +311,12 @@
 				3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */,
 				3EE1C3D0254B2A0200947C19 /* SettingsView.swift */,
 				3EE1C3DA254B2A2A00947C19 /* UserExperienceView.swift */,
-				3EE1C3DF254B2A3E00947C19 /* SearchView.swift */,
+				3EE1C3DF254B2A3E00947C19 /* SearchViewRijks.swift */,
 				3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */,
 				3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */,
 				3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */,
 				3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */,
+				3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -570,7 +573,7 @@
 				3EE1C390254A2E6400947C19 /* User.swift in Sources */,
 				3EE1C3DB254B2A2A00947C19 /* UserExperienceView.swift in Sources */,
 				3EE1C366254A2C4400947C19 /* SearchViewController.swift in Sources */,
-				3EE1C3E0254B2A3E00947C19 /* SearchView.swift in Sources */,
+				3EE1C3E0254B2A3E00947C19 /* SearchViewRijks.swift in Sources */,
 				3EE1C39A254A2E9800947C19 /* AppError.swift in Sources */,
 				3EE1C3AE254A2F1800947C19 /* AuthSession.swift in Sources */,
 				3EE1C35C254A2BAE00947C19 /* LoginViewController.swift in Sources */,
@@ -593,6 +596,7 @@
 				3EE1C3B8254A2F4700947C19 /* StorageService.swift in Sources */,
 				3E3A91972551FD8800C4CFF4 /* DataSource.swift in Sources */,
 				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
+				3E3A920E255A01D200C4CFF4 /* SearchViewTM.swift in Sources */,
 				3EE1C357254A2B8800947C19 /* FavoritesViewController.swift in Sources */,
 				3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */,
 				3EE1C370254A2C7700947C19 /* UserExperienceViewController.swift in Sources */,
