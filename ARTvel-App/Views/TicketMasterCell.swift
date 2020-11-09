@@ -43,7 +43,7 @@ class TicketMasterCell: UICollectionViewCell {
     
     private func commonInit() {
         setupImageViewConstraints()
-        setupEventNameLabelConstraints()
+        //setupEventNameLabelConstraints()
     }
     
     private func setupImageViewConstraints() {
@@ -52,7 +52,7 @@ class TicketMasterCell: UICollectionViewCell {
             make.top.equalTo(self.snp.top)
             make.bottom.equalTo(self.snp.bottom)
             make.left.equalTo(self.snp.left)
-            //make.right.equalTo(self.snp.right)
+            make.right.equalTo(self.snp.right)
         }
     }
     

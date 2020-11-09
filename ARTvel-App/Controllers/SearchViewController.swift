@@ -138,7 +138,7 @@ class SearchViewController: UIViewController {
                 fatalError()
             }
             
-            cell.titleLabel.text = artItem.title
+            //cell.titleLabel.text = artItem.title
             let url = URL(string: artItem.webImage.url)
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2))], completionHandler:  { (result) in
@@ -165,7 +165,7 @@ class SearchViewController: UIViewController {
             }
             
             cell.backgroundColor = .systemRed
-            cell.eventNameLabel.text = event.name
+            //cell.eventNameLabel.text = event.name
             cell.imageView.image = UIImage(systemName: "book")
             //let url = URL(string: event.webImage.url)
             //cell.imageView.kf.setImage(with: url)
