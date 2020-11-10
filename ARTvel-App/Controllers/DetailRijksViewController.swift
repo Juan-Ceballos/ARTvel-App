@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailViewController: UIViewController {
+class DetailRijksViewController: UIViewController {
 
     var currentArtItem: ArtObject?
     
