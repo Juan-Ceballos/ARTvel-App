@@ -38,7 +38,7 @@ struct StartDateWrapper: Decodable, Hashable {
 
 struct StartWrapper: Decodable, Hashable {
     let localDate: String
-    let localTime: String
+    let localTime: String?
 }
 
 struct PriceWrapper: Decodable, Hashable {

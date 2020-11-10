@@ -171,9 +171,20 @@ class SearchViewController: UIViewController {
                 fatalError()
             }
             
+            let url = URL(string: event.images.first?.url ?? "")
+            
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name
-            cell.imageView.image = UIImage(systemName: "book")
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2)), .cacheOriginalImage], completionHandler:  { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let kfImage):
+                    print("\(kfImage.source.url?.absoluteString ?? "")")
+                }
+            })
+            //cell.imageView.image = UIImage(systemName: "book")
             //let url = URL(string: event.webImage.url)
             //cell.imageView.kf.setImage(with: url)
             return cell
