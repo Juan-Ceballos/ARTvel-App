@@ -27,7 +27,7 @@ class DetailTMViewController: UIViewController {
             fatalError()
         }
         
-        detailTMView.priceLabel.text = String(currentEvent.priceRanges.first?.max ?? 0)
+        detailTMView.priceLabel.text = String(currentEvent.priceRanges?.first?.max ?? 0)
     }
 
 }

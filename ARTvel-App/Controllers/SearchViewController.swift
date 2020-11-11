@@ -145,7 +145,6 @@ class SearchViewController: UIViewController {
                 fatalError()
             }
             
-            //cell.titleLabel.text = artItem.title
             let url = URL(string: artItem.webImage.url)
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2))], completionHandler:  { (result) in
@@ -184,9 +183,6 @@ class SearchViewController: UIViewController {
                     print("\(kfImage.source.url?.absoluteString ?? "")")
                 }
             })
-            //cell.imageView.image = UIImage(systemName: "book")
-            //let url = URL(string: event.webImage.url)
-            //cell.imageView.kf.setImage(with: url)
             return cell
         })
         
@@ -194,12 +190,6 @@ class SearchViewController: UIViewController {
         snapshot.appendSections([.main])
         dataSourceTM.apply(snapshot, animatingDifferences: false)
     }
-    
-    // state of the app
-    /*
-     user selects rijks or ticketmaster
-     if user selects ticketmaster use ticketmaster api populate api, search based on experience
-     */
 
 }
 

@@ -25,7 +25,7 @@ struct Event: Decodable, Hashable {
     let url: String
     let images: [ImageWrapper]
     let dates: StartDateWrapper
-    let priceRanges: [PriceWrapper]
+    let priceRanges: [PriceWrapper]?
 }
 
 struct ImageWrapper: Decodable, Hashable {
