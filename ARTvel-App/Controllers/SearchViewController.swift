@@ -171,10 +171,18 @@ class SearchViewController: UIViewController {
             }
             
             let url = URL(string: event.images.first?.url ?? "")
+            let dateString = event.dates.start.localTime
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+            
+            let date = dateFormatter.date(from: dateString ?? "")
+            dateFormatter.dateFormat = "h:mm a"
+            let dateTwelve = dateFormatter.string(from: date!)
             
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name
-            cell.eventTimeLabel.text = event.dates.start.localTime
+            cell.eventTimeLabel.text = dateTwelve
             cell.eventDateLabel.text = event.dates.start.localDate
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2)), .cacheOriginalImage], completionHandler:  { (result) in
