@@ -317,9 +317,9 @@
 				3EE1C3DF254B2A3E00947C19 /* SearchViewRijks.swift */,
 				3EE1C3E4254B2A5B00947C19 /* RijksCell.swift */,
 				3E3A91BD2554B75E00C4CFF4 /* DetailRijksView.swift */,
+				3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */,
 				3EE1C3D5254B2A1600947C19 /* TicketMasterCell.swift */,
 				3E3A92052559748D00C4CFF4 /* DetailTicketMasterView.swift */,
-				3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

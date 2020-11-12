@@ -11,6 +11,7 @@ class DetailTMViewController: UIViewController {
 
     let detailTMView = DetailTicketMasterView()
     var tmEvent: Event?
+    var eventImage: UIImage?
     
     override func loadView() {
         view = detailTMView
@@ -26,8 +27,13 @@ class DetailTMViewController: UIViewController {
         guard let currentEvent = tmEvent else {
             fatalError()
         }
+        let url = URL(string: currentEvent.images.first?.url ?? "")
         
-        detailTMView.priceLabel.text = String(currentEvent.priceRanges?.first?.max ?? 0)
+        detailTMView.detailEventImageView.kf.setImage(with: url)
+        detailTMView.detailEventNameLabel.text = currentEvent.name
+        detailTMView.detailEventDateLabel.text = "Date: \(currentEvent.dates.start.localDate)"
+        detailTMView.detailEventTimeLabel.text = "Local Start Time: \(currentEvent.dates.start.localTime ?? "")"
+        detailTMView.priceLabel.text = "Price Range: $\(String(currentEvent.priceRanges?.first?.min ?? 0))0 - $\(String(currentEvent.priceRanges?.first?.max ?? 0))0"
     }
 
 }
