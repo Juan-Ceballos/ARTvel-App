@@ -22,6 +22,13 @@ class TicketMasterCell: UICollectionViewCell {
     public lazy var eventNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Title"
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    public lazy var eventDateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
         return label
     }()
     
@@ -44,6 +51,8 @@ class TicketMasterCell: UICollectionViewCell {
     private func commonInit() {
         setupImageViewConstraints()
         setupEventNameLabelConstraints()
+        setupEventDateLabelConstraints()
+        setupEventTimeLabelConstraints()
     }
     
     private func setupImageViewConstraints() {
@@ -59,13 +68,28 @@ class TicketMasterCell: UICollectionViewCell {
     private func setupEventNameLabelConstraints()    {
         addSubview(eventNameLabel)
         eventNameLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self.snp.centerY)
+            make.top.equalTo(self.snp.top).offset(11)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }
     }
     
+    private func setupEventDateLabelConstraints() {
+        addSubview(eventDateLabel)
+        eventDateLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(eventNameLabel.snp.bottom).offset(8)
+            make.left.equalTo(imageView.snp.right).offset(8)
+            make.right.equalTo(self.snp.right).offset(-8)
+        }
+    }
+    
+    
     private func setupEventTimeLabelConstraints()   {
-        
+        addSubview(eventTimeLabel)
+        eventTimeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(eventDateLabel.snp.bottom).offset(8)
+            make.left.equalTo(imageView.snp.right).offset(8)
+            make.right.equalTo(self.snp.right).offset(-8)
+        }
     }
 }

@@ -174,6 +174,8 @@ class SearchViewController: UIViewController {
             
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name
+            cell.eventTimeLabel.text = event.dates.start.localTime
+            cell.eventDateLabel.text = event.dates.start.localDate
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2)), .cacheOriginalImage], completionHandler:  { (result) in
                 switch result {
