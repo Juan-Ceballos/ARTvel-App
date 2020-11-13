@@ -33,11 +33,13 @@ class DetailRijksView: UIView {
     
     public lazy var dateCreatedLabel: UILabel = {
         let label = UILabel()
+        label.text = "Year:"
         return label
     }()
     
     public lazy var placeProducedLabel: UILabel = {
         let label = UILabel()
+        label.text = "Location:"
         return label
     }()
     
@@ -94,7 +96,7 @@ class DetailRijksView: UIView {
         dateCreatedLabel.snp.makeConstraints { (make) in
             make.top.equalTo(descriptionTextView.snp.bottom).offset(11)
             make.left.equalToSuperview().offset(11)
-            make.right.equalToSuperview().offset(-11)
+            make.right.equalTo(self.snp.centerX)
         }
     }
     
@@ -103,7 +105,7 @@ class DetailRijksView: UIView {
         placeProducedLabel.snp.makeConstraints { (make) in
             make.top.equalTo(dateCreatedLabel.snp.bottom).offset(11)
             make.left.equalToSuperview().offset(11)
-            make.right.equalToSuperview().offset(-11)
+            make.right.equalTo(self.snp.centerX)
         }
     }
     

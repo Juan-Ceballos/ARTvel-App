@@ -41,8 +41,8 @@ class DetailRijksViewController: UIViewController {
             case .success(let objectDetail):
                 DispatchQueue.main.async {
                     self?.detailView.descriptionTextView.text = objectDetail.plaqueDescriptionEnglish
-                    self?.detailView.dateCreatedLabel.text = objectDetail.dating.presentingDate
-                    self?.detailView.placeProducedLabel.text = objectDetail.productionPlaces.first
+                    self?.detailView.dateCreatedLabel.text = "Year: \(objectDetail.dating.presentingDate)"
+                    self?.detailView.placeProducedLabel.text = "Location: \(objectDetail.productionPlaces.first ?? "")"
                 }
             }
         }
