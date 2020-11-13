@@ -13,6 +13,17 @@ class DetailRijksViewController: UIViewController {
     var currentArtItem: ArtObject?
     
     let detailView = DetailRijksView()
+    let rBButton = UIBarButtonItem()
+    
+    private var isFavorite = false {
+        didSet{
+            if isFavorite {
+                rBButton.image = UIImage(systemName: "heart.fill")
+            }else{
+                rBButton.image = UIImage(systemName: "heart")
+            }
+        }
+    }
     
     override func loadView() {
         view = detailView
@@ -22,6 +33,25 @@ class DetailRijksViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemPurple
         configureUI()
+        navigationItem.rightBarButtonItem = rBButton
+        navigationItem.rightBarButtonItem?.target = self
+        navigationItem.rightBarButtonItem?.action = #selector(favoriteButtonPressed)
+        checkFavorite()
+    }
+    
+    private func checkFavorite() {
+        switch isFavorite {
+        case true:
+            rBButton.image = UIImage(systemName: "heart.fill")
+        case false:
+            rBButton.image = UIImage(systemName: "heart")
+
+        }
+    }
+    
+    @objc private func favoriteButtonPressed() {
+        isFavorite = true
+        print("favorite button pressed")
     }
     
     private func configureUI() {
