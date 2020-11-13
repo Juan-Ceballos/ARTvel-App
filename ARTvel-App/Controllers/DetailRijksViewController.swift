@@ -53,19 +53,34 @@ class DetailRijksViewController: UIViewController {
     }
     
     @objc private func favoriteButtonPressed() {
-        isFavorite.toggle()
+        
         guard let displayItem = currentArtItem else {
             fatalError()
         }
-        db.addToFavoriteRijks(artItem: displayItem) { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success:
-                print("favorited")
+        
+        switch isFavorite {
+        case true:
+            isFavorite.toggle()
+            db.removeFromFavoriteRijks(artItem: displayItem) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    print("deleted from favorites")
+                }
+            }
+        case false:
+            isFavorite.toggle()
+            db.addToFavoriteRijks(artItem: displayItem) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    print("favorited")
+                }
             }
         }
-        print("favorite button pressed")
+        
     }
     
     

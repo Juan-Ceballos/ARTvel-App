@@ -49,7 +49,15 @@ class DatabaseService {
         }
     }
     
-    
+    public func removeFromFavoriteRijks(artItem: ArtObject, completion: @escaping (Result<Bool, Error>) -> ()) {
+        db.collection(DatabaseService.favoriteCollectionRijks).document(artItem.objectNumber).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
     
     func updateDatabaseUser(userExperience: String,
                             completion: @escaping (Result<Bool, Error>) -> ()) {
