@@ -27,7 +27,18 @@ class DetailRijksView: UIView {
         textView.allowsEditingTextAttributes = false
         textView.isEditable = false
         textView.isSelectable = false
+        textView.font = .systemFont(ofSize: 17)
         return textView
+    }()
+    
+    public lazy var dateCreatedLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    public lazy var placeProducedLabel: UILabel = {
+        let label = UILabel()
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -44,6 +55,8 @@ class DetailRijksView: UIView {
         setupDisplayImageConstraints()
         setupTitleLabelConstraints()
         setupDescriptionTextViewConstraints()
+        setupDateCreatedConstraints()
+        setupPlaceProducedLabelConstraints()
     }
     
     private func setupDisplayImageConstraints() {
@@ -61,7 +74,7 @@ class DetailRijksView: UIView {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(displayImageView.snp.bottom).offset(11)
-            make.left.equalToSuperview().offset(8)
+            make.left.equalToSuperview().offset(11)
             make.right.equalTo(self.snp.centerX)
         }
     }
@@ -71,6 +84,24 @@ class DetailRijksView: UIView {
         descriptionTextView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(11)
             make.height.equalTo(self.snp.height).multipliedBy(0.2)
+            make.left.equalToSuperview().offset(11)
+            make.right.equalToSuperview().offset(-11)
+        }
+    }
+    
+    private func setupDateCreatedConstraints() {
+        addSubview(dateCreatedLabel)
+        dateCreatedLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(descriptionTextView.snp.bottom).offset(11)
+            make.left.equalToSuperview().offset(11)
+            make.right.equalToSuperview().offset(-11)
+        }
+    }
+    
+    private func setupPlaceProducedLabelConstraints() {
+        addSubview(placeProducedLabel)
+        placeProducedLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(dateCreatedLabel.snp.bottom).offset(11)
             make.left.equalToSuperview().offset(11)
             make.right.equalToSuperview().offset(-11)
         }

@@ -29,13 +29,11 @@ class DetailRijksViewController: UIViewController {
             fatalError()
         }
         
-        //displayImage goes here
         let url = URL(string: displayItem.webImage.url)
         detailView.displayImageView.kf.setImage(with: url)
         detailView.titleLabel.text = displayItem.title
         
-        // fetch detail of art object to populate detail view ui, setup elements and constraints in detailview, and fetch and populate here calling said elements
-        
+        // date created, placed produced
         RijksAPIClient.fetchDetailsOfArtObject(objectNumber: displayItem.objectNumber) { [weak self] (result) in
             switch result {
             case .failure(let error):
@@ -43,6 +41,8 @@ class DetailRijksViewController: UIViewController {
             case .success(let objectDetail):
                 DispatchQueue.main.async {
                     self?.detailView.descriptionTextView.text = objectDetail.plaqueDescriptionEnglish
+                    self?.detailView.dateCreatedLabel.text = objectDetail.dating.presentingDate
+                    self?.detailView.placeProducedLabel.text = objectDetail.productionPlaces.first
                 }
             }
         }
