@@ -229,14 +229,14 @@ extension SearchViewController: UICollectionViewDelegate {
                 fatalError()
             }
             detailView.currentArtItem = artItem
-            self.navigationController?.pushViewController(detailView, animated: false)
+            self.navigationController?.pushViewController(detailView, animated: true)
 
         default:
             guard let eventItem = dataSourceTM.itemIdentifier(for: indexPath) else {
                 fatalError()
             }
             detailViewTm.tmEvent = eventItem
-            self.navigationController?.pushViewController(detailViewTm, animated: false)
+            self.navigationController?.pushViewController(detailViewTm, animated: true)
         }
         
     }

@@ -11,6 +11,7 @@ import Kingfisher
 class DetailRijksViewController: UIViewController {
 
     var currentArtItem: ArtObject?
+    let db = DatabaseService()
     
     let detailView = DetailRijksView()
     let rBButton = UIBarButtonItem()
@@ -39,6 +40,8 @@ class DetailRijksViewController: UIViewController {
         checkFavorite()
     }
     
+    
+    
     private func checkFavorite() {
         switch isFavorite {
         case true:
@@ -51,8 +54,20 @@ class DetailRijksViewController: UIViewController {
     
     @objc private func favoriteButtonPressed() {
         isFavorite.toggle()
+        guard let displayItem = currentArtItem else {
+            fatalError()
+        }
+        db.addToFavoriteRijks(artItem: displayItem) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success:
+                print("favorited")
+            }
+        }
         print("favorite button pressed")
     }
+    
     
     private func configureUI() {
         guard let displayItem = currentArtItem else {
