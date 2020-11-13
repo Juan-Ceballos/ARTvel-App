@@ -13,6 +13,18 @@ class DetailTMViewController: UIViewController {
     var tmEvent: Event?
     var eventImage: UIImage?
     
+    let rBButton = UIBarButtonItem()
+    
+    private var isFavorite = false {
+        didSet{
+            if isFavorite {
+                rBButton.image = UIImage(systemName: "heart.fill")
+            }else{
+                rBButton.image = UIImage(systemName: "heart")
+            }
+        }
+    }
+    
     override func loadView() {
         view = detailTMView
     }
@@ -20,7 +32,26 @@ class DetailTMViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        navigationItem.rightBarButtonItem = rBButton
+        navigationItem.rightBarButtonItem?.target = self
+        navigationItem.rightBarButtonItem?.action = #selector(favoriteButtonPressed)
+        checkFavorite()
         configureUI()
+    }
+    
+    private func checkFavorite() {
+        switch isFavorite {
+        case true:
+            rBButton.image = UIImage(systemName: "heart.fill")
+        case false:
+            rBButton.image = UIImage(systemName: "heart")
+
+        }
+    }
+    
+    @objc private func favoriteButtonPressed() {
+        isFavorite.toggle()
+        print("favorite button pressed")
     }
     
     private func configureUI() {

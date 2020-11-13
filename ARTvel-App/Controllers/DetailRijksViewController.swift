@@ -50,7 +50,7 @@ class DetailRijksViewController: UIViewController {
     }
     
     @objc private func favoriteButtonPressed() {
-        isFavorite = true
+        isFavorite.toggle()
         print("favorite button pressed")
     }
     
