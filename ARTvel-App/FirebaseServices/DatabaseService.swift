@@ -59,6 +59,23 @@ class DatabaseService {
         }
     }
     
+    public func getAllFavoriteRijksItems(completion: @escaping (Result<[ArtObject], Error>) -> ()) {
+        
+        guard let user = Auth.auth().currentUser else {return}
+        
+        db.collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+            }
+            
+            if let snapshot = snapshot {
+                let favItems = snapshot.documents.map{ArtObject($0.data(), $0.data())}
+                    completion(.success(favItems))
+            }
+        }
+    }
+    
     func updateDatabaseUser(userExperience: String,
                             completion: @escaping (Result<Bool, Error>) -> ()) {
       guard let user = Auth.auth().currentUser else { return }

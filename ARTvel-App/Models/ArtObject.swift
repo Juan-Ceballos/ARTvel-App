@@ -35,3 +35,17 @@ struct DateWrapper: Decodable {
     let presentingDate: String
 }
 
+extension ArtObject {
+    init(_ dictionary: [String:Any], _ webImageDict: [String:Any]) {
+        self.objectNumber = dictionary["artObjectNumber"] as? String ?? ""
+        self.title = dictionary["artTitle"] as? String ?? ""
+        self.webImage = WebImage(webImageDict)
+    }
+}
+
+extension WebImage {
+    init(_ dictionary: [String:Any]) {
+        self.url = dictionary["artImageURL"] as? String ?? ""
+    }
+}
+
