@@ -33,6 +33,7 @@ class FavoritesViewController: UIViewController {
         view.backgroundColor = .systemRed
         configureCollectionView()
         configure()
+        favoriteView.collectionViewFavorite.delegate = self
     }
     
     func configure() {
@@ -90,4 +91,20 @@ class FavoritesViewController: UIViewController {
         dataSourceFavorite.apply(snapshot, animatingDifferences: false)
     }
     
+}
+
+extension FavoritesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // maybe use already established detailFavorite
+        
+        let detailFavoritesView = DetailFavoritesViewController()
+        guard let artItem = dataSourceFavorite.itemIdentifier(for: indexPath) else {
+            fatalError()
+        }
+        
+        
+        detailFavoritesView.artItem = artItem
+        self.navigationController?.pushViewController(detailFavoritesView, animated: true)
+    }
 }

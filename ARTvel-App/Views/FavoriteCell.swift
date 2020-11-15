@@ -51,8 +51,8 @@ class FavoriteCell: UICollectionViewCell {
     private func commonInit() {
         setupImageViewConstraints()
         setupEventNameLabelConstraints()
-        setupEventDateLabelConstraints()
-        setupEventTimeLabelConstraints()
+        //setupEventDateLabelConstraints()
+        //setupEventTimeLabelConstraints()
     }
     
     private func setupImageViewConstraints() {

@@ -54,7 +54,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         //authSession.signOutCurrentUser()
 
-        viewControllers = [UINavigationController(rootViewController: searchVC), favoritesVC, settingsVC]
+        viewControllers = [UINavigationController(rootViewController: searchVC), UINavigationController(rootViewController: favoritesVC), settingsVC]
     }
     
 }
