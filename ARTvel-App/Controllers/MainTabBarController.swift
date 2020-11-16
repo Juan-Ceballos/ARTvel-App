@@ -36,9 +36,16 @@ class MainTabBarController: UITabBarController {
     }()
 
     public lazy var favoritesVC: UIViewController = {
-        let vc = FavoritesViewController()
-        vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
-        return vc
+        switch experience {
+        case "Rijksmuseum":
+            let vc = FavoritesViewController(state: AppState.State.rijks)
+            vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
+            return vc
+        default:
+            let vc = FavoritesViewController(state: AppState.State.ticketMaster)
+            vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
+            return vc
+        }
     }()
 
     public lazy var settingsVC: UIViewController = {

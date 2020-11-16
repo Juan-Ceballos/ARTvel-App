@@ -46,3 +46,9 @@ struct PriceWrapper: Decodable, Hashable {
     let min: Double
     let max: Double
 }
+
+extension Event {
+    init(_ dictionary: [String:Any]) {
+        self.name = dictionary[""]
+    }
+}

@@ -49,6 +49,26 @@ class DatabaseService {
         }
     }
     
+    public func addToFavoriteEvents(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else {return}
+        db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).setData(["name" : eventItem.name,
+                                                                                            "id" : eventItem.id,
+                                                                                            "url" : eventItem.url,
+                                                                                            "images" : eventItem.images,
+                                                                                            "dates" : eventItem.dates,
+                                                                                            "priceRanges" : eventItem.priceRanges ?? [PriceWrapper](),
+                                                                                            "userID" : user.uid
+        
+        ]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+            
+        }
+    }
+    
     public func removeFromFavoriteRijks(artItem: ArtObject, completion: @escaping (Result<Bool, Error>) -> ()) {
         db.collection(DatabaseService.favoriteCollectionRijks).document(artItem.objectNumber).delete { (error) in
             if let error = error {
@@ -72,6 +92,19 @@ class DatabaseService {
             if let snapshot = snapshot {
                 let favItems = snapshot.documents.map{ArtObject($0.data(), $0.data())}
                     completion(.success(favItems))
+            }
+        }
+    }
+    
+    public func getAllFavoriteDatabaseItems(completion: @escaping (Result<[Event], Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else {return}
+        db.collection(DatabaseService.favoriteCollectionTM).whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            if let snapshot = snapshot {
+                let favItems = snapshot.documents.map{Event()}
+                completion(.success(favItems))
             }
         }
     }

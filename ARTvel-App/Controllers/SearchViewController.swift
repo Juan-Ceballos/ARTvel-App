@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     }
     
     let authSession = AuthSession()
-    let searchView = SearchViewRijks()
+    let searchViewRijks = SearchViewRijks()
     let searchViewTM = SearchViewTM()
     private var searchController: UISearchController!
     
@@ -62,7 +62,7 @@ class SearchViewController: UIViewController {
     override func loadView() {
         switch state {
         case .rijks:
-            view = searchView
+            view = searchViewRijks
         default:
             view = searchViewTM
         }
@@ -74,14 +74,14 @@ class SearchViewController: UIViewController {
         configureSearchController()
         configureCollectionView()
         configure()
-        searchView.collectionViewRijks.delegate = self
+        searchViewRijks.collectionViewRijks.delegate = self
         searchViewTM.collectionViewTM.delegate = self
     }
     
     private func configureCollectionView()  {
         switch state {
         case .rijks:
-            searchView.collectionViewRijks.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
+            searchViewRijks.collectionViewRijks.register(RijksCell.self, forCellWithReuseIdentifier: RijksCell.reuseIdentifier)
         case .ticketMaster:
             searchViewTM.collectionViewTM.register(TicketMasterCell.self, forCellWithReuseIdentifier: TicketMasterCell.reuseIdentifier)
         }
@@ -140,7 +140,7 @@ class SearchViewController: UIViewController {
     }
     
     private func configureDataSourceRijks()  {
-        dataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchView.collectionViewRijks, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
+        dataSourceRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: searchViewRijks.collectionViewRijks, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RijksCell.reuseIdentifier, for: indexPath) as? RijksCell else {
                 fatalError()
@@ -222,15 +222,15 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let detailView = DetailRijksViewController()
+        let detailViewRijks = DetailRijksViewController()
         let detailViewTm = DetailTMViewController()
         switch state {
         case .rijks:
             guard let artItem = dataSourceRijks.itemIdentifier(for: indexPath) else {
                 fatalError()
             }
-            detailView.currentArtItem = artItem
-            self.navigationController?.pushViewController(detailView, animated: true)
+            detailViewRijks.currentArtItem = artItem
+            self.navigationController?.pushViewController(detailViewRijks, animated: true)
 
         default:
             guard let eventItem = dataSourceTM.itemIdentifier(for: indexPath) else {

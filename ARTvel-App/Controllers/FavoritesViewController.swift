@@ -16,6 +16,17 @@ class FavoritesViewController: UIViewController {
         view = favoriteView
     }
     
+    var state: AppState.State
+    
+    init(state: AppState.State) {
+        self.state = state
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private enum Section {
         case main
     }
@@ -55,6 +66,10 @@ class FavoritesViewController: UIViewController {
                 self.updateFavoriteSnapshot(favoriteArtItems: artObjects)
             }
         }
+    }
+    
+    private func fetchFavoriteEventItems() {
+        
     }
     
     private func updateFavoriteSnapshot(favoriteArtItems: [ArtObject]) {
