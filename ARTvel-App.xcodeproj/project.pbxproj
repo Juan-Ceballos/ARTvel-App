@@ -16,8 +16,6 @@
 		3E3A920E255A01D200C4CFF4 /* SearchViewTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */; };
 		3E3A9213255B375A00C4CFF4 /* DetailTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A9212255B375A00C4CFF4 /* DetailTMViewController.swift */; };
 		3E3A923D255F429E00C4CFF4 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A923C255F429D00C4CFF4 /* FavoriteCell.swift */; };
-		3E3A92452561CC8100C4CFF4 /* DetailFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A92442561CC7F00C4CFF4 /* DetailFavoritesViewController.swift */; };
-		3E3A927A2561D0F300C4CFF4 /* DetailFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A92792561D0F300C4CFF4 /* DetailFavoritesView.swift */; };
 		3EE1C2F9254A26A100947C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2F8254A26A100947C19 /* AppDelegate.swift */; };
 		3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */; };
 		3EE1C302254A26A300947C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1C301254A26A300947C19 /* Assets.xcassets */; };
@@ -86,8 +84,6 @@
 		3E3A920D255A01D200C4CFF4 /* SearchViewTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewTM.swift; sourceTree = "<group>"; };
 		3E3A9212255B375A00C4CFF4 /* DetailTMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTMViewController.swift; sourceTree = "<group>"; };
 		3E3A923C255F429D00C4CFF4 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
-		3E3A92442561CC7F00C4CFF4 /* DetailFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesViewController.swift; sourceTree = "<group>"; };
-		3E3A92792561D0F300C4CFF4 /* DetailFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesView.swift; sourceTree = "<group>"; };
 		3EE1C2F5254A26A100947C19 /* ARTvel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARTvel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE1C2F8254A26A100947C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE1C2FA254A26A100947C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,7 +242,6 @@
 				3E3A91B82554B74300C4CFF4 /* DetailRijksViewController.swift */,
 				3E3A9212255B375A00C4CFF4 /* DetailTMViewController.swift */,
 				3EE1C356254A2B8800947C19 /* FavoritesViewController.swift */,
-				3E3A92442561CC7F00C4CFF4 /* DetailFavoritesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				3EE1C3C1254B29DB00947C19 /* FavoritesView.swift */,
-				3E3A92792561D0F300C4CFF4 /* DetailFavoritesView.swift */,
 				3E3A923C255F429D00C4CFF4 /* FavoriteCell.swift */,
 				3EE1C3C6254B29E700947C19 /* LoginView.swift */,
 				3EE1C3CB254B29F600947C19 /* MainTabBarView.swift */,
@@ -594,7 +588,6 @@
 				3EE1C3C7254B29E700947C19 /* LoginView.swift in Sources */,
 				3EE1C3D6254B2A1600947C19 /* TicketMasterCell.swift in Sources */,
 				3EE1C3B3254A2F3000947C19 /* DatabaseService.swift in Sources */,
-				3E3A927A2561D0F300C4CFF4 /* DetailFavoritesView.swift in Sources */,
 				3EE1C37B254A2CE100947C19 /* UIViewController+Alerts.swift in Sources */,
 				3E3A91872550A2F400C4CFF4 /* AppState.swift in Sources */,
 				3E3A923D255F429E00C4CFF4 /* FavoriteCell.swift in Sources */,
@@ -612,7 +605,6 @@
 				3E3A91972551FD8800C4CFF4 /* DataSource.swift in Sources */,
 				3EE1C361254A2C2200947C19 /* MainTabBarController.swift in Sources */,
 				3E3A920E255A01D200C4CFF4 /* SearchViewTM.swift in Sources */,
-				3E3A92452561CC8100C4CFF4 /* DetailFavoritesViewController.swift in Sources */,
 				3EE1C357254A2B8800947C19 /* FavoritesViewController.swift in Sources */,
 				3EE1C2FB254A26A100947C19 /* SceneDelegate.swift in Sources */,
 				3EE1C370254A2C7700947C19 /* UserExperienceViewController.swift in Sources */,

@@ -96,15 +96,13 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        // maybe use already established detailFavorite
-        
-        let detailFavoritesView = DetailFavoritesViewController()
+        let detailRijksViewController = DetailRijksViewController()
+
         guard let artItem = dataSourceFavorite.itemIdentifier(for: indexPath) else {
             fatalError()
         }
         
-        
-        detailFavoritesView.artItem = artItem
-        self.navigationController?.pushViewController(detailFavoritesView, animated: true)
+        detailRijksViewController.currentArtItem = artItem
+        self.navigationController?.pushViewController(detailRijksViewController, animated: true)
     }
 }

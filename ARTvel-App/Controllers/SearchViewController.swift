@@ -94,6 +94,7 @@ class SearchViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
     }
     
     private func fetchSampleArtItems(searchQuery: String)  {
