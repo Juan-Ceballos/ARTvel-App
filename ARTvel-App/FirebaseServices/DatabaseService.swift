@@ -82,6 +82,16 @@ class DatabaseService {
         }
     }
     
+    public func removeFromFavoritesTM(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
+        db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).delete() { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
     public func getAllFavoriteRijksItems(completion: @escaping (Result<[ArtObject], Error>) -> ()) {
         
         guard let user = Auth.auth().currentUser else {return}

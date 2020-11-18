@@ -153,12 +153,22 @@ extension FavoritesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let detailRijksViewController = DetailRijksViewController()
-
-        guard let artItem = dataSourceFavoriteRijks.itemIdentifier(for: indexPath) else {
-            fatalError()
-        }
+        let detailTMViewController = DetailTMViewController()
         
-        detailRijksViewController.currentArtItem = artItem
-        self.navigationController?.pushViewController(detailRijksViewController, animated: true)
+        switch state {
+        case .rijks:
+            guard let artItem = dataSourceFavoriteRijks.itemIdentifier(for: indexPath) else {
+                fatalError()
+            }
+            detailRijksViewController.currentArtItem = artItem
+            self.navigationController?.pushViewController(detailRijksViewController, animated: true)
+            
+        case .ticketMaster:
+            guard let eventItem = dataSourceFavoriteTM.itemIdentifier(for: indexPath) else {
+                fatalError()
+            }
+            detailTMViewController.tmEvent = eventItem
+            self.navigationController?.pushViewController(detailTMViewController, animated: true)
+        }
     }
 }

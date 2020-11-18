@@ -58,7 +58,14 @@ class DetailTMViewController: UIViewController {
         switch isFavorite {
         case true:
             isFavorite.toggle()
-            
+            db.removeFromFavoritesTM(eventItem: eventForDetail) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    print("removed from favorites")
+                }
+            }
         case false:
             isFavorite.toggle()
             db.addToFavoriteEvents(eventItem: eventForDetail) { (result) in
