@@ -11,9 +11,10 @@ class DetailTMViewController: UIViewController {
 
     let detailTMView = DetailTicketMasterView()
     var tmEvent: Event?
-    var eventImage: UIImage?
+    //var eventImage: UIImage?
     
     let rBButton = UIBarButtonItem()
+    let db = DatabaseService()
     
     private var isFavorite = false {
         didSet{
@@ -32,11 +33,11 @@ class DetailTMViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        configureUI()
         navigationItem.rightBarButtonItem = rBButton
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(favoriteButtonPressed)
         checkFavorite()
-        configureUI()
     }
     
     private func checkFavorite() {
@@ -50,8 +51,25 @@ class DetailTMViewController: UIViewController {
     }
     
     @objc private func favoriteButtonPressed() {
-        isFavorite.toggle()
-        print("favorite button pressed")
+        guard let eventForDetail = tmEvent else {
+            fatalError()
+        }
+        
+        switch isFavorite {
+        case true:
+            isFavorite.toggle()
+            
+        case false:
+            isFavorite.toggle()
+            db.addToFavoriteEvents(eventItem: eventForDetail) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    print("favorited")
+                }
+            }
+        }
     }
     
     private func configureUI() {
@@ -66,7 +84,7 @@ class DetailTMViewController: UIViewController {
         
         let date = dateFormatter.date(from: dateString ?? "")
         dateFormatter.dateFormat = "h:mm a"
-        let dateTwelve = dateFormatter.string(from: date!)
+        let dateTwelve = dateFormatter.string(from: date ?? Date())
         
         detailTMView.detailEventImageView.kf.setImage(with: url)
         detailTMView.detailEventNameLabel.text = currentEvent.name

@@ -179,7 +179,7 @@ class SearchViewController: UIViewController {
             
             let date = dateFormatter.date(from: dateString ?? "")
             dateFormatter.dateFormat = "h:mm a"
-            let dateTwelve = dateFormatter.string(from: date!)
+            let dateTwelve = dateFormatter.string(from: date ?? Date())
             
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name

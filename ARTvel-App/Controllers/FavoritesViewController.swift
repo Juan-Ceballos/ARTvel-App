@@ -33,28 +33,37 @@ class FavoritesViewController: UIViewController {
     
     // item in this, favorite model?
     // app state...
-    private typealias DataSourceFavorite = UICollectionViewDiffableDataSource<Section, ArtObject>
+    private typealias DataSourceFavoriteRijks = UICollectionViewDiffableDataSource<Section, ArtObject>
     
-    private var dataSourceFavorite: DataSourceFavorite!
+    private typealias DataSourceFavoriteTM = UICollectionViewDiffableDataSource<Section, Event>
+    
+    private var dataSourceFavoriteRijks: DataSourceFavoriteRijks!
+    
+    private var dataSourceFavoriteTM: DataSourceFavoriteTM!
     
     let db = DatabaseService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
-        configureCollectionView()
         configure()
+        configureCollectionView()
         favoriteView.collectionViewFavorite.delegate = self
     }
     
     func configure() {
-        fetchFavoriteArtItems()
-        configureDataSourceFavorite()
+        switch state {
+        case .rijks:
+            configureDataSourceFavoriteRijks()
+            fetchFavoriteArtItems()
+        case .ticketMaster:
+            configureDataSourceFavoriteTM()
+            fetchFavoriteEventItems()
+        }
     }
     
     private func configureCollectionView() {
         favoriteView.collectionViewFavorite.register(FavoriteCell.self, forCellWithReuseIdentifier: FavoriteCell.reuseIdentifier)
-        configure()
     }
     
     private func fetchFavoriteArtItems() {
@@ -63,25 +72,57 @@ class FavoritesViewController: UIViewController {
             case .failure(let error):
                 print(error)
             case .success(let artObjects):
-                self.updateFavoriteSnapshot(favoriteArtItems: artObjects)
+                self.updateFavoriteSnapshotRijks(favoriteArtItems: artObjects)
             }
         }
     }
     
     private func fetchFavoriteEventItems() {
-        
+        db.getAllFavoriteDatabaseItems { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let dbEvents):
+                DispatchQueue.main.async {
+                    self?.updateFavoriteEventsSnapshot(favoriteEventItems: dbEvents)
+                }
+            }
+        }
     }
     
-    private func updateFavoriteSnapshot(favoriteArtItems: [ArtObject]) {
-        var snapshot = dataSourceFavorite.snapshot()
+    private func updateFavoriteSnapshotRijks(favoriteArtItems: [ArtObject]) {
+        var snapshot = dataSourceFavoriteRijks.snapshot()
         snapshot.deleteAllItems()
         snapshot.appendSections([.main])
         snapshot.appendItems(favoriteArtItems)
-        dataSourceFavorite.apply(snapshot, animatingDifferences: false)
+        dataSourceFavoriteRijks.apply(snapshot, animatingDifferences: false)
     }
     
-    private func configureDataSourceFavorite() {
-        dataSourceFavorite = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: favoriteView.collectionViewFavorite, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
+    private func updateFavoriteEventsSnapshot(favoriteEventItems: [Event]) {
+        var snapshot = dataSourceFavoriteTM.snapshot()
+        snapshot.deleteAllItems()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(favoriteEventItems)
+        dataSourceFavoriteTM.apply(snapshot, animatingDifferences: false)
+    }
+    
+    private func configureDataSourceFavoriteTM() {
+        dataSourceFavoriteTM = UICollectionViewDiffableDataSource<Section, Event>(collectionView: favoriteView.collectionViewFavorite, cellProvider: { (collectionView, indexPath, eventItem) -> UICollectionViewCell? in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCell.reuseIdentifier, for: indexPath) as? FavoriteCell else {
+                fatalError()
+            }
+            
+            cell.eventNameLabel.text = eventItem.name
+            return cell
+        })
+        var snapshot = dataSourceFavoriteTM.snapshot()
+        snapshot.appendSections([.main])
+        dataSourceFavoriteTM.apply(snapshot, animatingDifferences: false)
+    }
+    
+    private func configureDataSourceFavoriteRijks() {
+        dataSourceFavoriteRijks = UICollectionViewDiffableDataSource<Section, ArtObject>(collectionView: favoriteView.collectionViewFavorite, cellProvider: { (collectionView, indexPath, artItem) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCell.reuseIdentifier, for: indexPath) as? FavoriteCell else {
                 fatalError()
@@ -101,9 +142,9 @@ class FavoritesViewController: UIViewController {
             return cell
         })
         
-        var snapshot = dataSourceFavorite.snapshot()
+        var snapshot = dataSourceFavoriteRijks.snapshot()
         snapshot.appendSections([.main])
-        dataSourceFavorite.apply(snapshot, animatingDifferences: false)
+        dataSourceFavoriteRijks.apply(snapshot, animatingDifferences: false)
     }
     
 }
@@ -113,7 +154,7 @@ extension FavoritesViewController: UICollectionViewDelegate {
         
         let detailRijksViewController = DetailRijksViewController()
 
-        guard let artItem = dataSourceFavorite.itemIdentifier(for: indexPath) else {
+        guard let artItem = dataSourceFavoriteRijks.itemIdentifier(for: indexPath) else {
             fatalError()
         }
         

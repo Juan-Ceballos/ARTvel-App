@@ -54,7 +54,7 @@ class DatabaseService {
         db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).setData(["eventName" : eventItem.name,
                                                                                             "id" : eventItem.id,
                                                                                             "url" : eventItem.url,
-                                                                                            "images" : eventItem.images.first ?? "",
+                                                                                            "images" : eventItem.images.first?.url ?? "",
                                                                                             "date" : eventItem.dates.start.localDate,
                                                                                             "time" : eventItem.dates.start.localTime ?? "",
                                                                                             "currency": eventItem.priceRanges?.first?.currency ?? "",
@@ -106,7 +106,7 @@ class DatabaseService {
                 completion(.failure(error))
             }
             if let snapshot = snapshot {
-                let favItems = snapshot.documents.map{Event()}
+                let favItems = snapshot.documents.map{Event($0.data(), $0.data(), $0.data(), $0.data())}
                 completion(.success(favItems))
             }
         }
