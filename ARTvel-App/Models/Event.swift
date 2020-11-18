@@ -48,7 +48,39 @@ struct PriceWrapper: Decodable, Hashable {
 }
 
 extension Event {
+    init(_ dictionary: [String:Any], _ imagesURLDict: [String:Any], _ datesDictionary: [String:Any], _ priceRangeDictionary: [String:Any]) {
+        self.name = dictionary["eventName"] as? String ?? ""
+        self.id = dictionary["id"] as? String ?? ""
+        self.url = dictionary["url"] as? String ?? ""
+        self.images = [ImageWrapper(imagesURLDict)]
+        self.dates = StartDateWrapper(datesDictionary)
+        self.priceRanges = [PriceWrapper(priceRangeDictionary)]
+    }
+}
+
+extension ImageWrapper {
     init(_ dictionary: [String:Any]) {
-        self.name = dictionary[""]
+        self.url = dictionary["images"] as? String ?? ""
+    }
+}
+
+extension StartDateWrapper {
+    init(_ dictionary: [String:Any]) {
+        self.start = StartWrapper(dictionary)
+    }
+}
+
+extension StartWrapper {
+    init(_ dictionary: [String:Any]) {
+        self.localDate = dictionary["date"] as? String ?? ""
+        self.localTime = dictionary["time"] as? String
+    }
+}
+
+extension PriceWrapper {
+    init(_ dictionary: [String: Any]) {
+        self.currency = dictionary["currency"] as? String ?? ""
+        self.min = dictionary["priceRangeMin"] as? Double ??  0.0
+        self.max = dictionary["priceRangeMax"] as? Double ?? 0.0
     }
 }

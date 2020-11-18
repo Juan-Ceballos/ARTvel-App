@@ -51,12 +51,15 @@ class DatabaseService {
     
     public func addToFavoriteEvents(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else {return}
-        db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).setData(["name" : eventItem.name,
+        db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).setData(["eventName" : eventItem.name,
                                                                                             "id" : eventItem.id,
                                                                                             "url" : eventItem.url,
-                                                                                            "images" : eventItem.images,
-                                                                                            "dates" : eventItem.dates,
-                                                                                            "priceRanges" : eventItem.priceRanges ?? [PriceWrapper](),
+                                                                                            "images" : eventItem.images.first ?? "",
+                                                                                            "date" : eventItem.dates.start.localDate,
+                                                                                            "time" : eventItem.dates.start.localTime ?? "",
+                                                                                            "currency": eventItem.priceRanges?.first?.currency ?? "",
+                                                                                            "priceRangeMin" : eventItem.priceRanges?.first?.min ?? 0.0,
+                                                                                            "priceRangeMax": eventItem.priceRanges?.first?.max ?? 0.0,
                                                                                             "userID" : user.uid
         
         ]) { (error) in
