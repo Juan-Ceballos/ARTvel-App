@@ -82,7 +82,7 @@ class FavoritesViewController: UIViewController {
         case .ticketMaster:
             configureDataSourceFavoriteTM()
             fetchFavoriteEventItems()
-            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionTM).addSnapshotListener({ (snapshot, error) in
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionTM).whereField("userId", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
                 if let error = error {
                     print(error)
                 } else {
