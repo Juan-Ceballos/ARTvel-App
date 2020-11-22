@@ -7,6 +7,8 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
+import FirebaseFirestore
 
 class FavoritesViewController: UIViewController {
 
@@ -41,6 +43,8 @@ class FavoritesViewController: UIViewController {
     
     private var dataSourceFavoriteTM: DataSourceFavoriteTM!
     
+    private var favListener: ListenerRegistration?
+    
     let db = DatabaseService()
     
     override func viewDidLoad() {
@@ -51,11 +55,35 @@ class FavoritesViewController: UIViewController {
         favoriteView.collectionViewFavorite.delegate = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        //favListener?.remove()
+    }
+    
     func configure() {
+        guard let user = Auth.auth().currentUser else {return}
         switch state {
         case .rijks:
             configureDataSourceFavoriteRijks()
             fetchFavoriteArtItems()
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionRijks).addSnapshotListener({ (snapshot, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    if let snapshot = snapshot {
+                        let query = snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
+                            if let error = error {
+                                print(error)
+                            } else {
+                                if let snapshot = snapshot {
+                                    let favorites = snapshot.documents.map {ArtObject($0.data(), $0.data())}
+                                    self.updateFavoriteSnapshotRijks(favoriteArtItems: favorites)
+                                }
+                            }
+                        }
+                    }
+                }
+            })
         case .ticketMaster:
             configureDataSourceFavoriteTM()
             fetchFavoriteEventItems()
