@@ -55,11 +55,6 @@ class FavoritesViewController: UIViewController {
         favoriteView.collectionViewFavorite.delegate = self
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        //favListener?.remove()
-    }
-    
     func configure() {
         guard let user = Auth.auth().currentUser else {return}
         switch state {
@@ -71,7 +66,7 @@ class FavoritesViewController: UIViewController {
                     print(error)
                 } else {
                     if let snapshot = snapshot {
-                        let query = snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
+                        snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
                             if let error = error {
                                 print(error)
                             } else {
@@ -87,6 +82,24 @@ class FavoritesViewController: UIViewController {
         case .ticketMaster:
             configureDataSourceFavoriteTM()
             fetchFavoriteEventItems()
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionTM).addSnapshotListener({ (snapshot, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    if let snapshot = snapshot {
+                        snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
+                            if let error = error {
+                                print(error)
+                            } else {
+                                if let snapshot = snapshot {
+                                    let favorites = snapshot.documents.map {Event($0.data(), $0.data(), $0.data(), $0.data())}
+                                    self.updateFavoriteEventsSnapshot(favoriteEventItems: favorites)
+                                }
+                            }
+                        }
+                    }
+                }
+            })
         }
     }
     
