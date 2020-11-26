@@ -42,21 +42,38 @@ class DatabaseService {
         
         db.collection(DatabaseService.favoriteCollectionRijks).document(docRef.documentID).setData([
             
-            "artImageURL" : artItem.webImage.url,
-                                                                                                    
-            "artTitle" : artItem.title,
-                                                                                                    
-            "artObjectNumber" : artItem.objectNumber,
-                                                                                                    
+            "webImage" : artItem.webImage.url,
+                                                        
+            "title" : artItem.title,
+                                                        
+            "objectNumber" : artItem.objectNumber,
+                                                        
             "userID" : user.uid,
-                                                                                                    
-            "favRijksID": docRef.documentID
-            
+                                                    
+            "favArtID": docRef.documentID,
+                                    
         ]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
                 completion(.success(true))
+            }
+        }
+    }
+    
+    public func removeFromFavoriteRijks(artItem: ArtObject, completion: @escaping (Result<Bool, Error>) -> ()) {
+        print(artItem.favArtID ?? "empty")
+        guard let currentUser = Auth.auth().currentUser else {return}
+        db.collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: currentUser.uid).whereField("objectNumber", isEqualTo: artItem.objectNumber).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                if let snapshot = snapshot {
+                    snapshot.documents.forEach { (document) in
+                        document.reference.delete()
+                        completion(.success(true))
+                    }
+                }
             }
         }
     }
@@ -67,7 +84,7 @@ class DatabaseService {
         let docRef = db.collection(DatabaseService.favoriteCollectionTM).document()
         print("docRef is \(docRef)")
         
-        db.collection(DatabaseService.favoriteCollectionTM).document(docRef.documentID).setData([
+        db.collection(DatabaseService.favoriteCollectionTM).document().setData([
             
             "eventName" : eventItem.name,
                                                                                                  
@@ -101,16 +118,8 @@ class DatabaseService {
         }
     }
     
-    // might have to fix remove since document id is random
-    public func removeFromFavoriteRijks(artItem: ArtObject, completion: @escaping (Result<Bool, Error>) -> ()) {
-        db.collection(DatabaseService.favoriteCollectionRijks).document(artItem.objectNumber).delete { (error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(true))
-            }
-        }
-    }
+    
+    
     
     // same here removeRijks
     public func removeFromFavoritesTM(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {

@@ -61,43 +61,23 @@ class FavoritesViewController: UIViewController {
         case .rijks:
             configureDataSourceFavoriteRijks()
             fetchFavoriteArtItems()
-            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionRijks).addSnapshotListener({ (snapshot, error) in
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
                 if let error = error {
                     print(error)
-                } else {
-                    if let snapshot = snapshot {
-                        snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
-                            if let error = error {
-                                print(error)
-                            } else {
-                                if let snapshot = snapshot {
-                                    let favorites = snapshot.documents.map {ArtObject($0.data(), $0.data())}
-                                    self.updateFavoriteSnapshotRijks(favoriteArtItems: favorites)
-                                }
-                            }
-                        }
-                    }
+                } else if let snapshot = snapshot {
+                    let favorites = snapshot.documents.map {ArtObject($0.data(), $0.data())}
+                    self.updateFavoriteSnapshotRijks(favoriteArtItems: favorites)
                 }
             })
         case .ticketMaster:
             configureDataSourceFavoriteTM()
             fetchFavoriteEventItems()
-            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionTM).whereField("userId", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionTM).whereField("userID", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
                 if let error = error {
                     print(error)
-                } else {
-                    if let snapshot = snapshot {
-                        snapshot.query.whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
-                            if let error = error {
-                                print(error)
-                            } else {
-                                if let snapshot = snapshot {
-                                    let favorites = snapshot.documents.map {Event($0.data(), $0.data(), $0.data(), $0.data())}
-                                    self.updateFavoriteEventsSnapshot(favoriteEventItems: favorites)
-                                }
-                            }
-                        }
-                    }
+                } else if let snapshot = snapshot {
+                    let favorites = snapshot.documents.map {Event($0.data(), $0.data(), $0.data(), $0.data())}
+                    self.updateFavoriteEventsSnapshot(favoriteEventItems: favorites)
                 }
             })
         }

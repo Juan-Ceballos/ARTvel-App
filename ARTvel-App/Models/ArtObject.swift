@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct ArtObjectWrapper: Decodable {
     let artObjects: [ArtObject]
@@ -15,6 +16,8 @@ struct ArtObject: Decodable, Hashable {
     let objectNumber: String
     let title: String
     let webImage: WebImage
+    var favArtID: String?
+    var userID: String?
 }
 
 struct WebImage: Decodable, Hashable {
@@ -37,15 +40,19 @@ struct DateWrapper: Decodable {
 
 extension ArtObject {
     init(_ dictionary: [String:Any], _ webImageDict: [String:Any]) {
-        self.objectNumber = dictionary["artObjectNumber"] as? String ?? ""
-        self.title = dictionary["artTitle"] as? String ?? ""
+        self.objectNumber = dictionary["objectNumber"] as? String ?? ""
+        self.title = dictionary["title"] as? String ?? ""
         self.webImage = WebImage(webImageDict)
+        
+        self.favArtID = dictionary["favArtID"] as? String
+        
+        self.userID = dictionary["userID"] as? String
     }
 }
 
 extension WebImage {
     init(_ dictionary: [String:Any]) {
-        self.url = dictionary["artImageURL"] as? String ?? ""
+        self.url = dictionary["webImage"] as? String ?? ""
     }
 }
 
