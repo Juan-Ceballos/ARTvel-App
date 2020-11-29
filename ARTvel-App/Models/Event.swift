@@ -22,12 +22,12 @@ struct EventQuery: Decodable {
 struct Event: Decodable, Hashable {
     let name: String
     let id: String
-    let favID: String
+    let favID: String?
     let url: String
     let images: [ImageWrapper]
     let dates: StartDateWrapper
     let priceRanges: [PriceWrapper]?
-    let dateFavorited: Date
+    let dateFavorited: Date?
 }
 
 struct ImageWrapper: Decodable, Hashable {
