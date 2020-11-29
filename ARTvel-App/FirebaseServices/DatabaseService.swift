@@ -118,16 +118,19 @@ class DatabaseService {
         }
     }
     
-    
-    
-    
     // same here removeRijks
     public func removeFromFavoritesTM(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
-        db.collection(DatabaseService.favoriteCollectionTM).document(eventItem.id).delete() { (error) in
+        guard let currentUser = Auth.auth().currentUser else {return}
+        
+        db.collection(DatabaseService.favoriteCollectionTM).whereField("userID", isEqualTo: currentUser.uid).whereField("id", isEqualTo: eventItem.id).getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
-            } else {
-                completion(.success(true))
+            }
+            else if let snapshot = snapshot {
+                snapshot.documents.forEach { (document) in
+                    document.reference.delete()
+                    completion(.success(true))
+                }
             }
         }
     }
