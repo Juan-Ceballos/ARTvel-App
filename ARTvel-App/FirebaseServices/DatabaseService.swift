@@ -87,27 +87,25 @@ class DatabaseService {
         db.collection(DatabaseService.favoriteCollectionTM).document().setData([
             
             "eventName" : eventItem.name,
-                                                                                                 
+                                                        
             "id" : eventItem.id,
-                                                                                                 
+                                                        
             "url" : eventItem.url,
-                                                                                                 
+                                                        
             "images" : eventItem.images.first?.url ?? "",
-                                                                                                 
+                                                        
             "date" : eventItem.dates.start.localDate,
-                                                                                                 
+                                                    
             "time" : eventItem.dates.start.localTime ?? "",
-                                                                                                 
+                                                        
             "currency": eventItem.priceRanges?.first?.currency ?? "",
-                                                                                                 
+                                                        
             "priceRangeMin" : eventItem.priceRanges?.first?.min ?? 0.0,
-                                                                                                 
+                                                        
             "priceRangeMax": eventItem.priceRanges?.first?.max ?? 0.0,
-                                                                                                 
+                                                        
             "userID" : user.uid,
-                                                                                                 
-            "favEventID" : docRef.documentID
-                                                                                                 
+                                                    
         ]) { (error) in
             if let error = error {
                 completion(.failure(error))
@@ -161,6 +159,23 @@ class DatabaseService {
             if let snapshot = snapshot {
                 let favItems = snapshot.documents.map{Event($0.data(), $0.data(), $0.data(), $0.data())}
                 completion(.success(favItems))
+            }
+        }
+    }
+    
+    public func isEventFavorite(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else {return}
+        db.collection(DatabaseService.favoriteCollectionTM).whereField("userID", isEqualTo: user.uid).whereField("id", isEqualTo: eventItem.id).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                if let snapshot = snapshot {
+                    if snapshot.count > 0 {
+                        completion(.success(true))
+                    } else {
+                        completion(.success(false))
+                    }
+                }
             }
         }
     }
