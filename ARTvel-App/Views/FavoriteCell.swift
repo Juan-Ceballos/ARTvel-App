@@ -68,7 +68,7 @@ class FavoriteCell: UICollectionViewCell {
     private func setupEventNameLabelConstraints()    {
         addSubview(eventNameLabel)
         eventNameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top).offset(11)
+            make.bottom.equalTo(self.snp.centerY)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }

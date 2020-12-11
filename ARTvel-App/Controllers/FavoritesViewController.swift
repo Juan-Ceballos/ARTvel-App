@@ -88,7 +88,7 @@ class FavoritesViewController: UIViewController {
     }
     
     private func fetchFavoriteArtItems() {
-        db.getAllFavoriteRijksItems { (result) in
+        db.getAllFavoriteRijksDatabaseItems { (result) in
             switch result {
             case .failure(let error):
                 print(error)
@@ -99,7 +99,7 @@ class FavoritesViewController: UIViewController {
     }
     
     private func fetchFavoriteEventItems() {
-        db.getAllFavoriteDatabaseItems { [weak self] (result) in
+        db.getAllFavoriteTMDatabaseItems { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print(error)
@@ -135,6 +135,16 @@ class FavoritesViewController: UIViewController {
             }
             
             cell.eventNameLabel.text = eventItem.name
+            let url = URL(string: eventItem.images.first?.url ?? "")
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2))], completionHandler:  { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let kfImage):
+                    print(kfImage.source.url?.absoluteString ?? "")
+                }
+            })
             return cell
         })
         var snapshot = dataSourceFavoriteTM.snapshot()

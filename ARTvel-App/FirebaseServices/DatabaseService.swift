@@ -78,6 +78,23 @@ class DatabaseService {
         }
     }
     
+    public func isFavoriteRijksItem(artItem: ArtObject, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else {return}
+        db.collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: user.uid).whereField("objectNumber", isEqualTo: artItem.objectNumber).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                if let snapshot = snapshot {
+                    if snapshot.count > 0 {
+                        completion(.success(true))
+                    } else {
+                        completion(.success(false))
+                    }
+                }
+            }
+        }
+    }
+    
     public func addToFavoriteEvents(eventItem: Event, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else {return}
         
@@ -133,7 +150,7 @@ class DatabaseService {
         }
     }
     
-    public func getAllFavoriteRijksItems(completion: @escaping (Result<[ArtObject], Error>) -> ()) {
+    public func getAllFavoriteRijksDatabaseItems(completion: @escaping (Result<[ArtObject], Error>) -> ()) {
         
         guard let user = Auth.auth().currentUser else {return}
         
@@ -150,7 +167,7 @@ class DatabaseService {
         }
     }
     
-    public func getAllFavoriteDatabaseItems(completion: @escaping (Result<[Event], Error>) -> ()) {
+    public func getAllFavoriteTMDatabaseItems(completion: @escaping (Result<[Event], Error>) -> ()) {
         guard let user = Auth.auth().currentUser else {return}
         db.collection(DatabaseService.favoriteCollectionTM).whereField("userID", isEqualTo: user.uid).getDocuments { (snapshot, error) in
             if let error = error {
