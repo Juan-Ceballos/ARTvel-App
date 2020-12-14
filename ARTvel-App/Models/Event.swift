@@ -34,11 +34,19 @@ struct ImageWrapper: Decodable, Hashable {
 
 struct StartDateWrapper: Decodable, Hashable {
     let start: StartWrapper
+    let end: EndWrapper?
 }
 
 struct StartWrapper: Decodable, Hashable {
     let localDate: String
     let localTime: String?
+    let noSpecificTime: Bool
+}
+
+struct EndWrapper: Decodable, Hashable {
+    let localDate: String
+    let localTime: String?
+    let noSpecificTime: Bool
 }
 
 struct PriceWrapper: Decodable, Hashable {
@@ -67,13 +75,23 @@ extension ImageWrapper {
 extension StartDateWrapper {
     init(_ dictionary: [String:Any]) {
         self.start = StartWrapper(dictionary)
+        self.end = EndWrapper(dictionary)
     }
 }
 
 extension StartWrapper {
     init(_ dictionary: [String:Any]) {
-        self.localDate = dictionary["date"] as? String ?? ""
-        self.localTime = dictionary["time"] as? String
+        self.localDate = dictionary["startDate"] as? String ?? ""
+        self.localTime = dictionary["startTime"] as? String
+        self.noSpecificTime = dictionary["noSpecificTimeStart"] as? Bool ?? false
+    }
+}
+
+extension EndWrapper {
+    init(_ dictionary: [String:Any]) {
+        self.localDate = dictionary["endDate"] as? String ?? ""
+        self.localTime = dictionary["endTime"] as? String
+        self.noSpecificTime = dictionary["noSpecificTimeEnd"] as? Bool ?? false
     }
 }
 

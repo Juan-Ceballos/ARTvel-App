@@ -111,9 +111,17 @@ class DatabaseService {
                                                         
             "images" : eventItem.images.first?.url ?? "",
                                                         
-            "date" : eventItem.dates.start.localDate,
+            "startDate" : eventItem.dates.start.localDate,
                                                     
-            "time" : eventItem.dates.start.localTime ?? "",
+            "startTime" : eventItem.dates.start.localTime ?? "",
+            
+            "noSpecificTimeStart" : eventItem.dates.start.noSpecificTime,
+            
+            "endDate" : eventItem.dates.end?.localDate ?? "",
+            
+            "endTime" : eventItem.dates.end?.localTime ?? "",
+            
+            "noSpecificTimeEnd" : eventItem.dates.end?.noSpecificTime ?? false,
                                                         
             "currency": eventItem.priceRanges?.first?.currency ?? "",
                                                         

@@ -26,13 +26,25 @@ class TicketMasterCell: UICollectionViewCell {
         return label
     }()
     
-    public lazy var eventDateLabel: UILabel = {
+    public lazy var startEventDateLabel: UILabel = {
         let label = UILabel()
         label.text = "Title"
         return label
     }()
     
-    public lazy var eventTimeLabel: UILabel = {
+    public lazy var endEventDateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
+        return label
+    }()
+    
+    public lazy var startEventTimeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
+        return label
+    }()
+    
+    public lazy var endEventTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "Title"
         return label
@@ -51,8 +63,10 @@ class TicketMasterCell: UICollectionViewCell {
     private func commonInit() {
         setupImageViewConstraints()
         setupEventNameLabelConstraints()
-        setupEventDateLabelConstraints()
-        setupEventTimeLabelConstraints()
+        setupStartEventDateLabelConstraints()
+        setupEndEventDateLabelConstraints()
+        setupStartEventTimeLabelConstraints()
+        setupEndEventTimeLabelConstraints()
     }
     
     private func setupImageViewConstraints() {
@@ -74,20 +88,38 @@ class TicketMasterCell: UICollectionViewCell {
         }
     }
     
-    private func setupEventDateLabelConstraints() {
-        addSubview(eventDateLabel)
-        eventDateLabel.snp.makeConstraints { (make) in
+    private func setupStartEventDateLabelConstraints() {
+        addSubview(startEventDateLabel)
+        startEventDateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(eventNameLabel.snp.bottom).offset(8)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }
     }
     
+    private func setupEndEventDateLabelConstraints() {
+        addSubview(endEventDateLabel)
+        endEventDateLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(startEventDateLabel.snp.bottom).offset(8)
+            make.left.equalTo(imageView.snp.right).offset(8)
+            make.right.equalTo(self.snp.right).offset(-8)
+        }
+    }
     
-    private func setupEventTimeLabelConstraints()   {
-        addSubview(eventTimeLabel)
-        eventTimeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(eventDateLabel.snp.bottom).offset(8)
+    
+    private func setupStartEventTimeLabelConstraints()   {
+        addSubview(startEventTimeLabel)
+        startEventTimeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(endEventDateLabel.snp.bottom).offset(8)
+            make.left.equalTo(imageView.snp.right).offset(8)
+            make.right.equalTo(self.snp.right).offset(-8)
+        }
+    }
+    
+    private func setupEndEventTimeLabelConstraints() {
+        addSubview(endEventTimeLabel)
+        endEventTimeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(startEventTimeLabel.snp.bottom).offset(8)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }

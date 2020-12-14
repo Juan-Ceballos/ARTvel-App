@@ -172,19 +172,25 @@ class SearchViewController: UIViewController {
             }
             
             let url = URL(string: event.images.first?.url ?? "")
-            let dateString = event.dates.start.localTime
+            let startDateString = event.dates.start.localTime
+            let endDateString = event.dates.end?.localTime
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"
             
-            let date = dateFormatter.date(from: dateString ?? "")
+            let startDate = dateFormatter.date(from: startDateString ?? "")
+            let endDate = dateFormatter.date(from: endDateString ?? "")
             dateFormatter.dateFormat = "h:mm a"
-            let dateTwelve = dateFormatter.string(from: date ?? Date())
+            let dateTwelve = dateFormatter.string(from: startDate ?? Date())
+            let endDateTwelve = dateFormatter.string(from: endDate ?? Date())
             
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name
-            cell.eventTimeLabel.text = dateTwelve
-            cell.eventDateLabel.text = event.dates.start.localDate
+            cell.startEventTimeLabel.text = "Start Time: " + dateTwelve
+            cell.endEventTimeLabel.text = "End Time: " + endDateTwelve
+            
+            cell.startEventDateLabel.text = "Start Date: " + event.dates.start.localDate
+            cell.endEventDateLabel.text = "End Date: \(event.dates.end?.localDate ?? "")"
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2)), .cacheOriginalImage], completionHandler:  { (result) in
                 switch result {
