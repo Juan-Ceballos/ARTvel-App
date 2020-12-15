@@ -175,6 +175,9 @@ class SearchViewController: UIViewController {
             let startDateString = event.dates.start.localTime
             let endDateString = event.dates.end?.localTime
             
+            let specificStartTime = event.dates.start.noSpecificTime
+            let specificEndTime = event.dates.end?.noSpecificTime
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"
             
@@ -186,11 +189,26 @@ class SearchViewController: UIViewController {
             
             cell.backgroundColor = .systemRed
             cell.eventNameLabel.text = event.name
-            cell.startEventTimeLabel.text = "Start Time: " + dateTwelve
-            cell.endEventTimeLabel.text = "End Time: " + endDateTwelve
+            
+            if specificStartTime == true {
+                cell.startEventTimeLabel.text = "Start Time: N/A"
+
+            } else {
+                cell.startEventTimeLabel.text = "Start Time: " + dateTwelve
+            }
+            
+            if let sET = specificEndTime {
+                if sET == true {
+                    cell.endEventTimeLabel.text = "End Time: N/A"
+                } else {
+                    cell.endEventTimeLabel.text = "End Time: " + endDateTwelve
+                }
+            } else {
+                cell.endEventTimeLabel.text = "End Time: N/A"
+            }
             
             cell.startEventDateLabel.text = "Start Date: " + event.dates.start.localDate
-            cell.endEventDateLabel.text = "End Date: \(event.dates.end?.localDate ?? "")"
+            cell.endEventDateLabel.text = "End Date: \(event.dates.end?.localDate ?? "N/A")"
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2)), .cacheOriginalImage], completionHandler:  { (result) in
                 switch result {
