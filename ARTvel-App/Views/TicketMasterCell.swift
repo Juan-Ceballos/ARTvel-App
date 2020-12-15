@@ -23,6 +23,7 @@ class TicketMasterCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Title"
         label.numberOfLines = 2
+        label.font = .boldSystemFont(ofSize: 17)
         return label
     }()
     
@@ -64,8 +65,8 @@ class TicketMasterCell: UICollectionViewCell {
         setupImageViewConstraints()
         setupEventNameLabelConstraints()
         setupStartEventDateLabelConstraints()
-        setupEndEventDateLabelConstraints()
         setupStartEventTimeLabelConstraints()
+        setupEndEventDateLabelConstraints()
         setupEndEventTimeLabelConstraints()
     }
     
@@ -91,7 +92,16 @@ class TicketMasterCell: UICollectionViewCell {
     private func setupStartEventDateLabelConstraints() {
         addSubview(startEventDateLabel)
         startEventDateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(eventNameLabel.snp.bottom).offset(8)
+            make.top.equalTo(eventNameLabel.snp.bottom).offset(16)
+            make.left.equalTo(imageView.snp.right).offset(8)
+            make.right.equalTo(self.snp.right).offset(-8)
+        }
+    }
+    
+    private func setupStartEventTimeLabelConstraints()   {
+        addSubview(startEventTimeLabel)
+        startEventTimeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(startEventDateLabel.snp.bottom).offset(8)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }
@@ -100,17 +110,7 @@ class TicketMasterCell: UICollectionViewCell {
     private func setupEndEventDateLabelConstraints() {
         addSubview(endEventDateLabel)
         endEventDateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(startEventDateLabel.snp.bottom).offset(8)
-            make.left.equalTo(imageView.snp.right).offset(8)
-            make.right.equalTo(self.snp.right).offset(-8)
-        }
-    }
-    
-    
-    private func setupStartEventTimeLabelConstraints()   {
-        addSubview(startEventTimeLabel)
-        startEventTimeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(endEventDateLabel.snp.bottom).offset(8)
+            make.top.equalTo(startEventTimeLabel.snp.bottom).offset(8)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }
@@ -119,7 +119,7 @@ class TicketMasterCell: UICollectionViewCell {
     private func setupEndEventTimeLabelConstraints() {
         addSubview(endEventTimeLabel)
         endEventTimeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(startEventTimeLabel.snp.bottom).offset(8)
+            make.top.equalTo(endEventDateLabel.snp.bottom).offset(8)
             make.left.equalTo(imageView.snp.right).offset(8)
             make.right.equalTo(self.snp.right).offset(-8)
         }
