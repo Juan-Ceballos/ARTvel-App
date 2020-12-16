@@ -11,6 +11,13 @@ import SnapKit
 class FavoriteCell: UICollectionViewCell {
     static let reuseIdentifier = "favoriteCell"
     
+    override func layoutSubviews() {
+        self.clipsToBounds = true
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 8
+        self.layer.borderColor = UIColor.systemBackground.cgColor
+    }
+    
     public lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "photo")
@@ -23,6 +30,7 @@ class FavoriteCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Title"
         label.numberOfLines = 2
+        label.font = .boldSystemFont(ofSize: 17)
         return label
     }()
     

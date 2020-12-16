@@ -49,9 +49,7 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if state == .rijks {
-            view.backgroundColor = .systemOrange
-        } else {view.backgroundColor = .systemTeal}
+        view.backgroundColor = .systemBackground
         configure()
         configureCollectionView()
         favoriteView.collectionViewFavorite.delegate = self
@@ -135,7 +133,7 @@ class FavoritesViewController: UIViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCell.reuseIdentifier, for: indexPath) as? FavoriteCell else {
                 fatalError()
             }
-            
+            cell.backgroundColor = .systemTeal
             cell.eventNameLabel.text = eventItem.name
             let url = URL(string: eventItem.images.first?.url ?? "")
             cell.imageView.kf.indicatorType = .activity
@@ -162,6 +160,7 @@ class FavoritesViewController: UIViewController {
             }
             
             let url = URL(string: artItem.webImage.url)
+            cell.backgroundColor = .systemOrange
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "book"), options: [.transition(.fade(0.2))], completionHandler:  { (result) in
                 switch result {

@@ -14,7 +14,7 @@ class TicketMasterCell: UICollectionViewCell {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.layer.borderWidth = 1.0
-        self.layer.cornerRadius = self.frame.size.width / 20
+        self.layer.cornerRadius = 8
         self.layer.borderColor = UIColor.systemBackground.cgColor
     }
     

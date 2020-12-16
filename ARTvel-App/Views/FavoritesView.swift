@@ -15,7 +15,7 @@ class FavoritesView: UIView {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
         //gray 6
-        cv.backgroundColor = .tertiarySystemFill
+        cv.backgroundColor = .tertiarySystemBackground
         return cv
     }()
     
