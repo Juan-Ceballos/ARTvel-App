@@ -49,7 +49,9 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
+        if state == .rijks {
+            view.backgroundColor = .systemOrange
+        } else {view.backgroundColor = .systemTeal}
         configure()
         configureCollectionView()
         favoriteView.collectionViewFavorite.delegate = self
