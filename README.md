@@ -1,6 +1,6 @@
 # ARTvel-App
 
-![Artvel-Logo]()
+![Artvel-Logo](ARTvel-App/SupportingFiles/Assets.xcassets/ARTvelLogo.imageset/ARTvelLogo.png)
 
 ## Overview
 
