@@ -11,4 +11,4 @@ Login | Rijksmuseum Experience | Ticketmaster Experience
 ----- | ---------------------- | -----------------------
 ![Login](ARTvel-App/SupportingFiles/Assets.xcassets/Login.imageset/Login.png) | ![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png) | ![TMExperience](ARTvel-App/SupportingFiles/Assets.xcassets/TMExperience.imageset/TMExperience.png)
 
-## Setup
+## Features
