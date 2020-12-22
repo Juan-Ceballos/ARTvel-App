@@ -187,7 +187,7 @@ class SearchViewController: UIViewController {
             let dateTwelve = dateFormatter.string(from: startDate ?? Date())
             let endDateTwelve = dateFormatter.string(from: endDate ?? Date())
             
-            cell.backgroundColor = .systemTeal
+            cell.backgroundColor = .systemBlue
             cell.eventNameLabel.text = event.name
             
             if specificStartTime == true {
