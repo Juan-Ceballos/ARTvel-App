@@ -9,7 +9,5 @@ ARTvel is a dual experience app for the purpose of discovery. The first type of 
        
 ### Login
 ![Login](ARTvel-App/SupportingFiles/Assets.xcassets/Login.imageset/Login.png)
-### Rijksmuseum Experience        
-![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png)
-### Ticketmaster Experience
-![TMExperience](ARTvel-App/SupportingFiles/Assets.xcassets/TMExperience.imageset/TMExperience.png)
+### Rijksmuseum Experience        ![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png)
+### Ticketmaster Experience       ![TMExperience](ARTvel-App/SupportingFiles/Assets.xcassets/TMExperience.imageset/TMExperience.png)
