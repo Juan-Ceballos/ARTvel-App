@@ -26,9 +26,11 @@ Rijksmuseum Experience | Ticketmaster Experience
 
 Rijksmuseum Experience | Ticketmaster Experience
 ---------------------- | -----------------------
-![TMDetailFavorite](ARTvel-App/SupportingFiles/Assets.xcassets/TMDetailFavorite.imageset/TMDetailFavorite.png)
+![RijksDetailFavorite](ARTvel-App/SupportingFiles/Assets.xcassets/RijksDetailFavorite.imageset/RijksDetailFavorite.png) | ![TMDetailFavorite](ARTvel-App/SupportingFiles/Assets.xcassets/TMDetailFavorite.imageset/TMDetailFavorite.png)
 
 ### Browse Favorites
+
+![Favorites](ARTvel-App/SupportingFiles/Assets.xcassets/Favorites.imageset/Favorites.png)
 
 ## Code Block
 
