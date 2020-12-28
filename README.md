@@ -15,4 +15,4 @@ ARTvel is a dual experience app for the purpose of discovery. The first type of 
 
 Rijksmuseum Experience | Ticketmaster Experience
 ---------------------- | -----------------------
-![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png)
+![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png) | ![TMExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/TMExperience.png)
