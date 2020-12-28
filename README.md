@@ -15,7 +15,8 @@ ARTvel is a dual experience app for the purpose of discovery. The first type of 
 
 ### Search
 Rijksmuseum: Search for art pieces by artist name.
-Ticketmaster: Search for events based on address
+
+Ticketmaster: Search for events based on address.
 
 Rijksmuseum Experience | Ticketmaster Experience
 ---------------------- | -----------------------
