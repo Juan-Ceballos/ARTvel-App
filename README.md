@@ -24,6 +24,10 @@ Rijksmuseum Experience | Ticketmaster Experience
 
 ### Details and Favorite
 
+Rijksmuseum Experience | Ticketmaster Experience
+---------------------- | -----------------------
+
+
 ### Browse Favorites
 
 ## Code Block
