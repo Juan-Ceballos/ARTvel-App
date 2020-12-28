@@ -21,3 +21,7 @@ Ticketmaster: Search for events based on address.
 Rijksmuseum Experience | Ticketmaster Experience
 ---------------------- | -----------------------
 ![RijksExperience](ARTvel-App/SupportingFiles/Assets.xcassets/RijksExperience.imageset/RijksExperience.png) | ![TMExperience](ARTvel-App/SupportingFiles/Assets.xcassets/TMExperience.imageset/TMExperience.png)
+
+### Details and Favorite
+
+### Browse Favorites
