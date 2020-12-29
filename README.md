@@ -34,6 +34,20 @@ Rijksmuseum Experience | Ticketmaster Experience
 
 ## Code Block
 
+```swift
+case .rijks:
+            configureDataSourceFavoriteRijks()
+            fetchFavoriteArtItems()
+            favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
+                if let error = error {
+                    print(error)
+                } else if let snapshot = snapshot {
+                    let favorites = snapshot.documents.map {ArtObject($0.data(), $0.data())}
+                    self.updateFavoriteSnapshotRijks(favoriteArtItems: favorites)
+                }
+            })
+```
+
 ## Installation
 
 ## Built With
