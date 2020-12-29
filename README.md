@@ -56,11 +56,38 @@ case .rijks:
 
 * A developer account from Ticketmaster for a consumer key and consumer secret
 
-* Clone this repo to your local machine using https://github.com/Juan-Ceballos/ARTvel-App.git
-
 ### Clone
 
+* Clone this repo to your local machine using `https://github.com/Juan-Ceballos/ARTvel-App.git`
+
+### Setup
+
+* Add a Swift file named Config to project directory.
+
+* in file add following code
+
+```swift
+import Foundation
+
+struct SecretKey {
+    static let apiKey = "9oErvwz9"
+    
+    static let consumerKey = "ilcIXmyVPMkmtknNvujcHZ3BRPHzSrlq"
+    static let consumerSecret = "G2FIotMbe04XUkgk"
+}
+```
+
 ## Built With
+
+* XCode
+
+* Swift
+
+* Firebase Services
+
+* Kingfisher
+
+* SnapKit
 
 ## Collaborators
 
