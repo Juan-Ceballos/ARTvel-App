@@ -34,18 +34,28 @@ Rijksmuseum Experience | Ticketmaster Experience
 
 ## Code Block
 
+### Unit Testing
+
 ```swift
-case .rijks:
-    configureDataSourceFavoriteRijks()
-    fetchFavoriteArtItems()
-    favListener = Firestore.firestore().collection(DatabaseService.favoriteCollectionRijks).whereField("userID", isEqualTo: user.uid).addSnapshotListener({ (snapshot, error) in
-        if let error = error {
+func testNetworkHelperRijkCollectionsAPI()   {
+    let searchQuery = "Rembrandt van Rijn".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+    let exp = XCTestExpectation(description: "Art Objects Found")
+    let collectionEndpoint = "https://www.rijksmuseum.nl/api/nl/collection?key=\(SecretKey.apiKey)&involvedMaker=\(searchQuery)"
+    let request = URLRequest(url: URL(string: collectionEndpoint)!)
+        
+    NetworkHelper.shared.performDataTask(request: request) { (result) in
+        switch result {
+        case .failure(let error):
             print(error)
-        } else if let snapshot = snapshot {
-            let favorites = snapshot.documents.map {ArtObject($0.data(), $0.data())}
-            self.updateFavoriteSnapshotRijks(favoriteArtItems: favorites)
+            XCTFail("\(error)")
+        case .success(let data):
+            exp.fulfill()
+            XCTAssertGreaterThan(data.count, 20_000, "data should be greater than \(data.count)")
         }
-    })
+    }
+    wait(for: [exp], timeout: 5.0)
+        
+}
 ```
 
 ## Installation
