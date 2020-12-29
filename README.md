@@ -50,6 +50,14 @@ case .rijks:
 
 ## Installation
 
+### Prerequisites
+
+* A developer account from Rijksmuseum for an API Key
+
+* A developer account from Ticketmaster for a consumer key and consumer secret
+
+### Clone
+
 ## Built With
 
 ## Collaborators
