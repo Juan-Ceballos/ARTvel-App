@@ -56,6 +56,8 @@ case .rijks:
 
 * A developer account from Ticketmaster for a consumer key and consumer secret
 
+* Clone this repo to your local machine using https://github.com/Juan-Ceballos/ARTvel-App.git
+
 ### Clone
 
 ## Built With
