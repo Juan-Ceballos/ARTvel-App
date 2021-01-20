@@ -38,10 +38,28 @@ class DetailRijksViewController: UIViewController {
         navigationItem.rightBarButtonItem = rBButton
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(favoriteButtonPressed)
+        updateHeartUI()
         checkFavorite()
     }
     
-    
+    private func updateHeartUI() {
+        guard let rijksFavorite = currentArtItem else {
+            return
+        }
+        
+        db.isFavoriteRijksItem(artItem: rijksFavorite) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let isFavoriteDB):
+                if isFavoriteDB {
+                    self.isFavorite = true
+                } else {
+                    self.isFavorite = false
+                }
+            }
+        }
+    }
     
     private func checkFavorite() {
         switch isFavorite {
