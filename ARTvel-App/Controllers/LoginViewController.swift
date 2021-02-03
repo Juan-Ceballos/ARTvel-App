@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     let db = DatabaseService()
     let userExperienceVC = UserExperienceViewController()
     let loginView = LoginView()
-    private var keyboardIsVisible = false
     var originalYConstraint: CGFloat?
     
     override func loadView() {
@@ -38,63 +37,31 @@ class LoginViewController: UIViewController {
     }
     
     private func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
     }
     
     private func unregisterForKeyboardNotifications()   {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
         
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification , object: nil)
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        //print("keyboardWillShow")
-        
-        guard let keyboardFrame = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect else  {
-            return
-        }
-        
-        if loginView.passwordTextField.isEditing {
-            moveKeyboardUp(keyboardFrame.size.height - 17)
-        }
-        else {
-            moveKeyboardUp(keyboardFrame.size.height)
-        }
+        print("KB Will Show")
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        //print("keyboardWilllHide")
+        print("KB Will Hide")
     }
     
     private func moveKeyboardUp(_ height: CGFloat) {
-        if keyboardIsVisible { return }
-        originalYConstraint = height
-        loginView.signedUpUserButton.frame.origin.y -= height
-        print(loginView.signedUpUserButton.frame.origin.y)
-        print("\(height) height of key up")
-        loginView.createAccountButton.frame.origin.y -= 55
-        loginView.passwordTextField.frame.origin.y -= 55
-        loginView.usernameTextField.frame.origin.y -= 55
-        UIView.animate(withDuration: 0.5)   {
-            self.view.layoutIfNeeded()
-        }
         
-        keyboardIsVisible = true
     }
     
     private func resetUI()  {
-        keyboardIsVisible = false
-        loginView.signedUpUserButton.frame.origin.y += (originalYConstraint ?? 0)
-        print(loginView.signedUpUserButton.frame.origin.y)
-        print("\(originalYConstraint) og reset")
-        loginView.createAccountButton.frame.origin.y += 55
-        loginView.passwordTextField.frame.origin.y += 55
-        loginView.usernameTextField.frame.origin.y += 55
-        UIView.animate(withDuration: 1.0) {
-            self.view.layoutIfNeeded()
-        }
+        
     }
     
     private func signinExistingUser(email: String, password: String) {
@@ -205,7 +172,6 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        resetUI()
         return true
     }
 }

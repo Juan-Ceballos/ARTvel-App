@@ -34,6 +34,10 @@ class LoginView: UIView {
         textField.autocapitalizationType = .none
         textField.borderStyle = .none
         textField.textColor = .white
+        textField.keyboardType = .emailAddress
+        textField.smartDashesType = .no
+        textField.smartQuotesType = .no
+        textField.spellCheckingType = .no
         let ca = CALayer()
         ca.frame = CGRect(x: 0, y: textField.frame.height + 22, width: UIScreen.main.bounds.size.width - 44, height: 10)
         ca.backgroundColor = UIColor(red: 166/255, green: 125/255, blue: 39/255, alpha: 0.5).cgColor
@@ -50,6 +54,10 @@ class LoginView: UIView {
         textField.autocapitalizationType = .none
         textField.borderStyle = .none
         textField.textColor = .white
+        textField.keyboardType = .emailAddress
+        textField.smartDashesType = .no
+        textField.smartQuotesType = .no
+        textField.spellCheckingType = .no
         let ca = CALayer()
         ca.frame = CGRect(x: 0, y: textField.frame.height + 22, width: UIScreen.main.bounds.size.width - 44, height: 10)
         ca.backgroundColor = UIColor(red: 166/255, green: 125/255, blue: 39/255, alpha: 0.5).cgColor
