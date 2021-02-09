@@ -112,14 +112,23 @@ class DetailTMViewController: UIViewController {
         let date = dateFormatter.date(from: dateString ?? "")
         dateFormatter.dateFormat = "h:mm a"
         let dateTwelve = dateFormatter.string(from: date ?? Date())
+                if let url = URL(string: "\(currentEvent.url)") {
+                    UIApplication.shared.open(url)
+                }
+        let eventURLString = "Go to Event: \(currentEvent.url)"
+        let attributedLinkString = NSMutableAttributedString(string: eventURLString, attributes:[NSAttributedString.Key.link: url!])
+        let fullAttributedString = NSMutableAttributedString()
+        fullAttributedString.append(attributedLinkString)
+
+
+        
         
         detailTMView.detailEventImageView.kf.setImage(with: url)
         detailTMView.detailEventNameLabel.text = currentEvent.name
         detailTMView.detailEventDateLabel.text = "Date: \(currentEvent.dates.start.localDate)"
         detailTMView.detailEventTimeLabel.text = "Local Start Time: \(dateTwelve)"
         detailTMView.priceLabel.text = "Price Range: $\(String(currentEvent.priceRanges?.first?.min ?? 0))0 - $\(String(currentEvent.priceRanges?.first?.max ?? 0))0"
-        detailTMView.urlLabel.text = "url"
-        
+        detailTMView.urlLabel.attributedText = fullAttributedString
     }
 
 }

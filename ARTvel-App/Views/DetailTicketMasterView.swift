@@ -36,8 +36,10 @@ class DetailTicketMasterView: UIView {
     }()
     
     public lazy var urlLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel()        
         label.text = "Title"
+        label.isUserInteractionEnabled = true
+        
         return label
     }()
     
