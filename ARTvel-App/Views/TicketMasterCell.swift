@@ -131,4 +131,6 @@ class TicketMasterCell: UICollectionViewCell {
             make.right.equalTo(self.snp.right).offset(-8)
         }
     }
+    
+    
 }

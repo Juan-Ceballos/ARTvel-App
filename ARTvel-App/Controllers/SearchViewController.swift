@@ -95,6 +95,12 @@ class SearchViewController: UIViewController {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
+        switch state {
+        case .rijks:
+            searchController.searchBar.placeholder = "Artist"
+        case .ticketMaster:
+            searchController.searchBar.placeholder = "Search by City"
+        }
     }
     
     private func fetchSampleArtItems(searchQuery: String)  {
@@ -111,7 +117,7 @@ class SearchViewController: UIViewController {
     }
     
     private func fetchEventItems(searchQuery: String) {
-        TicketMasterAPIClient.fetchEvents(stateCode: searchQuery, city: "", postalCode: "") { [weak self](result) in
+        TicketMasterAPIClient.fetchEvents(stateCode: "", city: searchQuery, postalCode: "") { [weak self](result) in
             switch result {
             case .failure(let error):
                 print(error)

@@ -35,6 +35,12 @@ class DetailTicketMasterView: UIView {
         return iv
     }()
     
+    public lazy var urlLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -51,6 +57,7 @@ class DetailTicketMasterView: UIView {
         setupDetailEventDateLabelConstraints()
         setupDetailEventTimeLabelConstraints()
         setupPriceLabelConstraints()
+        setupURLLabelConstraints()
     }
     
     private func setupDetailEventImageViewConstraints() {
@@ -94,6 +101,15 @@ class DetailTicketMasterView: UIView {
         addSubview(priceLabel)
         priceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(detailEventTimeLabel.snp.bottom).offset(8)
+            make.left.equalToSuperview().offset(11)
+            make.right.equalToSuperview().offset(-11)
+        }
+    }
+    
+    private func setupURLLabelConstraints() {
+        addSubview(urlLabel)
+        urlLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(priceLabel.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(11)
             make.right.equalToSuperview().offset(-11)
         }

@@ -118,6 +118,8 @@ class DetailTMViewController: UIViewController {
         detailTMView.detailEventDateLabel.text = "Date: \(currentEvent.dates.start.localDate)"
         detailTMView.detailEventTimeLabel.text = "Local Start Time: \(dateTwelve)"
         detailTMView.priceLabel.text = "Price Range: $\(String(currentEvent.priceRanges?.first?.min ?? 0))0 - $\(String(currentEvent.priceRanges?.first?.max ?? 0))0"
+        detailTMView.urlLabel.text = "url"
+        
     }
 
 }
