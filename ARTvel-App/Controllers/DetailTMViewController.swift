@@ -11,7 +11,6 @@ class DetailTMViewController: UIViewController {
 
     let detailTMView = DetailTicketMasterView()
     var tmEvent: Event?
-    //var eventImage: UIImage?
     
     let rBButton = UIBarButtonItem()
     let db = DatabaseService()
@@ -37,8 +36,21 @@ class DetailTMViewController: UIViewController {
         navigationItem.rightBarButtonItem = rBButton
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(favoriteButtonPressed)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickLinked(_:)))
+        detailTMView.urlLabel.addGestureRecognizer(tap)
         updateHeartUI()
         checkFavorite()
+    }
+    
+    @objc func clickLinked(_ gesture: UITapGestureRecognizer) {
+        print("tap")
+        guard let eventClickedOnDetail = tmEvent else {
+            return
+        }
+        
+        if let url = URL(string: "\(eventClickedOnDetail.url)") {
+            UIApplication.shared.open(url)
+        }
     }
     
     private func updateHeartUI() {
@@ -112,17 +124,12 @@ class DetailTMViewController: UIViewController {
         let date = dateFormatter.date(from: dateString ?? "")
         dateFormatter.dateFormat = "h:mm a"
         let dateTwelve = dateFormatter.string(from: date ?? Date())
-                if let url = URL(string: "\(currentEvent.url)") {
-                    UIApplication.shared.open(url)
-                }
+                
         let eventURLString = "Go to Event: \(currentEvent.url)"
         let attributedLinkString = NSMutableAttributedString(string: eventURLString, attributes:[NSAttributedString.Key.link: url!])
         let fullAttributedString = NSMutableAttributedString()
         fullAttributedString.append(attributedLinkString)
 
-
-        
-        
         detailTMView.detailEventImageView.kf.setImage(with: url)
         detailTMView.detailEventNameLabel.text = currentEvent.name
         detailTMView.detailEventDateLabel.text = "Date: \(currentEvent.dates.start.localDate)"
