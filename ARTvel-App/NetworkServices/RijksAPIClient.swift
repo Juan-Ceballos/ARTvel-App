@@ -27,7 +27,7 @@ class RijksAPIClient {
                 print(appError)
             case .success(let data):
                 dump(data)
-                // set up model to parse into array for a table view
+
                 do {
                     let artCollection = try JSONDecoder().decode(ArtObjectWrapper.self, from: data)
                     let artObjects = artCollection.artObjects
