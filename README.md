@@ -58,6 +58,41 @@ func testNetworkHelperRijkCollectionsAPI()   {
 }
 ```
 
+### RESTful API Fetch Request
+
+```Swift
+public static func fetchArtObjects(searchQuery: String, completion: @escaping (Result<[ArtObject], AppError>) -> ())   {
+    
+    let urlSearchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+    
+    let urlEndpoint = "https://www.rijksmuseum.nl/api/nl/collection?key=\(SecretKey.apiKey)&involvedMaker=\(urlSearchQuery)"
+    
+    guard let url = URL(string: urlEndpoint) else {
+        completion(.failure(.badURL(urlEndpoint)))
+        return
+    }
+    
+    let urlRequest = URLRequest(url: url)
+    
+    NetworkHelper.shared.performDataTask(request: urlRequest) { (result) in
+        switch result {
+        case .failure(let appError):
+            print(appError)
+        case .success(let data):
+            dump(data)
+            
+            do {
+                let artCollection = try JSONDecoder().decode(ArtObjectWrapper.self, from: data)
+                let artObjects = artCollection.artObjects
+                completion(.success(artObjects))
+            } catch {
+                completion(.failure(.decodingError(error)))
+            }
+        }
+    }
+}
+```
+
 ## Installation
 
 ### Prerequisites
