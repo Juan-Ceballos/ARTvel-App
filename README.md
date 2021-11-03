@@ -110,7 +110,6 @@ public static func fetchArtObjects(searchQuery: String, completion: @escaping (R
 * Add a Swift file named Config to project directory.
 
 * Contact regarding further use
-```
 
 ## Built With
 
