@@ -109,17 +109,7 @@ public static func fetchArtObjects(searchQuery: String, completion: @escaping (R
 
 * Add a Swift file named Config to project directory.
 
-* in file add following code
-
-```swift
-import Foundation
-
-struct SecretKey {
-    static let apiKey = "9oErvwz9"
-    
-    static let consumerKey = "ilcIXmyVPMkmtknNvujcHZ3BRPHzSrlq"
-    static let consumerSecret = "G2FIotMbe04XUkgk"
-}
+* Contact regarding further use
 ```
 
 ## Built With
